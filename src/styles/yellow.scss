@@ -1,0 +1,85 @@
+@import 'viewport';
+
+
+.yellow {
+    scroll-snap-align: start;
+    background-color:#FFB33F ;
+    height: 100vh;
+    width: 100%;
+    // overflow: hidden;
+    display: flex;
+    // position: relative;
+
+    @include md {
+        scroll-snap-align: start;
+        background: url('https://res.cloudinary.com/jeremiahcanlas/image/upload/v1617168699/speer/Image_4_gvaafj.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+    
+    }
+
+    .content{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-left: auto;
+        height: 100vh;
+        width: 100%;
+        z-index: 99;
+        padding: 0 1rem;
+
+        @include  md {
+            width: 50%;
+        }
+        
+        
+        h1{
+            font-size: 3rem;
+            letter-spacing: 7.4px;
+            color: white;
+        }
+
+        p{
+            font-size: 1.8rem;
+            letter-spacing: 5.1px;
+
+        }
+
+       
+    }
+
+
+    .cover{
+        position: absolute;
+        overflow: hidden!important;
+        height: 100vh;
+        width: 100%;
+        display: none;
+
+        @include md {
+            display: block;
+        }
+
+        // .circle{
+        //     position:relative;
+        //     margin:20px auto;
+        //     width: 150px;
+        //     height:150px;
+        //     box-shadow: 0 0 0 10px #FFB33F; /* !!! */
+        //     border-radius:50%;
+        // }
+
+        svg{
+            
+            .background{
+                mask: url(#circles);
+                height: 100%;
+                width: 100%;
+            }
+        }
+
+    }
+
+}
+

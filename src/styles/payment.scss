@@ -1,0 +1,185 @@
+@import 'viewport';
+
+.payment {
+    scroll-snap-align: start;
+    // height: 100vh;
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 4rem 0;
+
+    @include md {
+        height: 100vh;
+        scroll-snap-align: start;
+    }
+
+    h1{
+        letter-spacing: 7.4px;
+        margin-bottom: 3rem;
+    }
+    
+
+    .payment-form {
+        width: 100%;
+
+
+        .tiers{
+            margin-bottom: 3rem;
+            
+
+            p{
+                font-size: 1rem;
+                letter-spacing: 4px;
+
+                @include md {
+                    font-size: 1.3rem;
+                }
+            }
+
+            .labels{
+                display: flex;
+                flex-direction: column;
+
+                @include md {
+                    flex-direction: row;
+                }
+
+                label{
+                    font-weight: 700;
+                    margin: 0.2rem 0;
+                    letter-spacing: 3.7px;
+
+                    @include md {
+                        margin: 0 1rem;
+                    }
+    
+                    i{
+                        margin-right: 0.2rem;
+                    }
+                }
+
+            }
+            
+
+        }
+
+
+        //only part 2 & 4 of the form
+        .credentials {
+            display: flex;
+            flex-direction: column;
+            justify-content: left;
+            margin-bottom: 2rem;
+
+            @include md {
+                flex-direction: row;
+            }
+
+
+            p {
+                font-size: 1rem;
+                letter-spacing: 4px;
+
+                @include md {
+                    font-size: 1.3rem;
+                    letter-spacing: 4.4px;
+                }
+
+            }
+
+                span {
+                    overflow: hidden;
+                    height: 5rem;
+
+                    input{
+                        border: 1px solid black;
+                        width: 95%;
+                        height: 40%;
+
+                        @include md {
+                            width: 30vw;
+                        }
+
+                        &:focus{
+                            outline: none;
+                            border-bottom: 5px solid #2F1FE9;
+                        }
+                    }
+
+                    label{
+                        font-size: 0.7rem;
+                        font-weight: 600;
+                        margin-bottom: 0.4rem;
+                    }
+                }
+
+                .credit{
+                    margin-left: auto;
+                }
+
+                // two input in a div that has row flex**
+                .split{
+                    display: flex;
+                    flex-direction: column;
+                    width: 100%;
+
+                    @include md {
+                        flex-direction: row;
+                    }
+                    
+
+                    span{
+                        
+                        &:last-child{
+
+                            @include md {
+                                margin-left: auto;
+                            }
+                        }
+
+                        input{
+                            width: 95%;
+                        }
+
+                    }
+
+
+                }
+        }
+
+        .terms{
+            // width:40%;
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+
+            @include md {
+                width: 40%;
+            }
+
+            span{
+                color: #2F1FE9;
+                font-weight: 600;
+                cursor: pointer;
+            }
+        }
+
+        .payment-btn{
+            display: inline-block;
+
+            
+            p{   
+                position: relative;        
+                padding: 1rem 5rem ;
+                right: 3rem;
+                bottom: 2rem;
+
+                &::after{
+                    padding:6px 20px;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,143 @@
+@import 'viewport';
+
+.price {
+    scroll-snap-align:end;
+    background-color: #191919;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem 0;
+    height: 100vh;
+    width: 100%;
+
+    @include md {
+        scroll-snap-align: start;
+        height: 100vh;
+    }
+
+    .main{
+        margin-top: 4rem ;
+        padding: 0 1rem;
+       
+
+        @include md {
+            margin-left: 13rem;
+            margin-right: 10rem;
+            margin-top: 0;
+    
+        }
+
+        h1{
+            letter-spacing: 7.4px;
+        }
+
+        p{
+            letter-spacing: 5.1px;
+            font-size: 1rem;
+
+            @include md {
+                font-size: 2rem;
+            }
+        }
+    }
+
+    .plans{
+        display: flex;
+        // flex-direction: column;
+        margin:0 3rem;
+        justify-content: space-evenly;
+
+        @include md {
+            flex-direction: row;
+        }
+
+        .plan{
+            margin: 1.5rem 0;
+
+            h1{
+
+                &:first-child{
+                    margin-bottom: 0.5rem;
+                    font-size: 1.3rem;
+                    letter-spacing: 4.2px;
+                }
+
+                &:last-of-type{
+                    font-size: 2rem!important;
+                    margin: 1rem 0;
+
+                    @include md {
+                        font-size: 5rem!important;
+                    }
+                }
+            }
+
+            h2 {
+                margin-top: 0.5rem;
+                letter-spacing: 4.2px;
+                font-size: 1.3rem;
+            }
+
+            .border{
+                border-bottom: 3px solid white;
+                width: 5rem;
+            }
+
+            i{
+                margin-right: 0.5rem;
+            }
+
+            p{
+                letter-spacing: 4.7px;
+                font-size: 1rem;
+                margin: 0.5rem 0;
+
+                @include md {
+                    font-size: 1.3rem;
+                }
+            }
+
+            .planBtn {
+                background-color: white;
+                text-align: center;
+                padding: 0.8rem;
+                width: 8rem;
+                color: white;
+                border-radius: 8rem;
+                margin-right: auto;
+                cursor: pointer;
+                letter-spacing: normal!important;
+                margin-top: 1.5rem;
+
+                @include md {
+                    margin: 0 auto;
+                }
+            }
+        }
+    }
+
+
+    .right-arrow {
+        position:absolute;
+        top: 65%;
+        right: 8%;
+        font-size: 2rem;
+        color: white;
+        z-index: 10;
+        cursor: pointer;
+        user-select: none;
+    }
+    
+    .left-arrow {
+        position:absolute;
+        top: 65%;
+        left: 8%;
+        font-size: 2rem;
+        color: white;
+        z-index: 10;
+        cursor: pointer;
+        user-select: none;
+    }
+
+}

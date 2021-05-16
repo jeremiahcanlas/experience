@@ -1,0 +1,109 @@
+@import 'viewport';
+
+
+.blue {
+    scroll-snap-align: start;
+    overflow: hidden;
+    height: 100vh;
+    width: 100%;
+    background-color: #1FE1E9;
+    display: flex;
+    flex-direction: row;
+
+    @include md {
+        scroll-snap-align: start;
+        height: 100vh;
+    }
+
+    
+
+    .speaker{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+        padding: 8rem;
+        display: none;
+        
+
+        @include md {
+            display: block;
+        }
+
+
+        img{
+            position: relative;
+            height: 12rem;
+        }
+    }
+
+    .review-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+
+        h1 {
+            color:white;
+            letter-spacing: 7.4px;
+            margin-left: 1.2rem;
+            font-size: 1.5rem;
+
+            @include md {
+                font-size: 2.5rem;
+            }
+        }
+
+        .reviews{
+            display: flex;
+            flex-direction: column;
+
+            @include md {
+                flex-direction: row;
+            }
+
+            .review{
+                padding: 0 1.2rem;
+                margin: 1rem 0;
+
+
+                h3 {
+                    color: white;
+                    font-size: .8rem;
+                    letter-spacing: 3.5px;
+
+                    @include md {
+                        font-size: 1.3rem;
+                    }
+                }
+    
+                .stars{
+                    
+                    i{
+                        margin: 0 0.2rem;
+
+                        &::before {
+                            font-size: 0.8rem;
+                        
+                            @include md {
+                                font-size: 1rem;
+                            }
+                        }
+                    }
+                }
+    
+                p{
+                    font-size: .8rem;
+                    letter-spacing: 3.5px;
+
+                    @include md {
+                        font-size: 1.2rem;
+                    }
+                }
+
+            }
+
+
+        }
+    }
+}

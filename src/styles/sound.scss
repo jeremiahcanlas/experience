@@ -1,0 +1,76 @@
+@import 'viewport';
+
+
+.sound-container {
+    scroll-snap-align: start;
+    height: 100vh;
+    width: 100%;
+    background-color: #D34848;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+
+    @include md {
+        scroll-snap-align: start;
+        flex-direction: row;
+    }
+
+    .superior{
+        padding: 0 1rem;
+        text-align: center;
+
+        @include md {
+            text-align: left;
+            padding:none;
+        }
+
+        h1{
+            font-size: 2rem;
+            color: white;
+            letter-spacing: 7.4px;
+            margin-bottom: 0;
+
+            @include md {
+                font-size: 3rem;
+            }
+        }
+
+        p{
+            font-size: 1.5rem;
+            letter-spacing: 5.1px;
+            margin-top: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        a {
+            left: 30%;
+
+            @include md {
+                left:6%;
+            }
+        }
+
+    }
+
+    .speakers{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        margin-top: 1.2rem;
+        width: 100vw;
+
+        @include md {
+            width:50%;
+        }
+        
+
+        img{
+            width: 100px;
+
+            @include md {
+                width:200px;
+            }
+        }
+    }
+}
