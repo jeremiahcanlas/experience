@@ -40,7 +40,7 @@ function App() {
   
   return (
     
-    <div className="App">
+    <div className="App app-main">
       <Router basename={process.env.PUBLIC_URL}>
         <Nav component={component} path={path}/>
         <ScrollToTop/> 

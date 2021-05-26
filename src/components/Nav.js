@@ -61,9 +61,9 @@ const Nav = ({component:{compo,color},path}) => {
 
                     <motion.div 
                     className={`circle`}
-                    initial={{scale:0,opacity:0}} 
-                    animate={{scale:expand?10:0,opacity:1}}
-                    transition={{duration:0.6}}
+                    initial={{x:-100,opacity:0}} 
+                    animate={{x:expand?0:-400,opacity:1}}
+                    transition={{duration:0.3}}
                     style={{backgroundColor: compo === 'black'?'#1FE1E9':'black'}}
                     />
 

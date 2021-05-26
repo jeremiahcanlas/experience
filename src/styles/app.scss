@@ -1,4 +1,10 @@
-html {
-    scroll-snap-type: y mandatory;
+@import 'viewport';
+
+html{
+
+    @include md {
+        scroll-snap-type: y mandatory;
+        -webkit-overflow-scrolling: touch;
+    }
 
 }
