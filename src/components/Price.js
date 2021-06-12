@@ -1,17 +1,13 @@
 import React,{useEffect,useState} from 'react';
 import '../styles/price.scss'
 import {useLocation,Link} from 'react-router-dom'
-import {useMediaQuery} from 'react-responsive'
+// import {useMediaQuery} from 'react-responsive'
 import { motion } from 'framer-motion';
 
-const Price = ({getPath,getTier,getCompo}) => {
+const Price = ({getPath,getTier,getCompo,isMobile}) => {
 const {pathname} = useLocation()
 
 const [current,setCurrent] = useState(0)
-
-// returns boolean if max width is met.
-const isMobile = useMediaQuery({query:'(max-width:688px)'})
-
 
 useEffect(() => {
     getPath(pathname)

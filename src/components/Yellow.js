@@ -3,9 +3,10 @@ import '../styles/yellow.scss'
 import {motion} from 'framer-motion'
 import SeeDemo from './buttons/SeeDemo'
 
-const Yellow = () => {
+const Yellow = ({isMobile}) => {
 
 const [values,setValues] = useState('');
+
 
     return (
         <div className='yellow'
@@ -32,12 +33,12 @@ const [values,setValues] = useState('');
                 <svg height='100vh' width='100%'>
                     <mask id="circles" maskContentUnits="userSpaceOnUse">
                         <rect x="0" y="0" width="100vw" height="100%" fill="white" />
-                        <circle cx='470' cy="200" r="150" fill="black" />
+                        <circle cx={isMobile?'250':'480'} cy="200" r="150" fill="black" />
                         <circle cx="350" cy="500" r="220" fill="black" />
                         <circle cx="1350" cy="760" r="180" fill="black" />
                         
 
-                        { values &&
+                        { values&&!isMobile&&
                             <motion.circle 
                             initial={{scale:0}} 
                             animate={{scale:values===''?0:1}}  

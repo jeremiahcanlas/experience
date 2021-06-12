@@ -44,7 +44,7 @@ const Payment = ({tier,getTier,getPath,getCompo}) => {
                         <p>1. Select your plan</p>
                         <div className='labels'>
                             {radio.map(r => (
-                                    <label for={r.name} style={{color:r.color}} key={radio.indexOf(r)}>
+                                    <label htmlFor={r.name} style={{color:r.color}} key={radio.indexOf(r)}>
                                         <i className='fa fa-circle' style={{display:tier===r.name?'inline-block':'none'}}/>
                                         <input type="radio" name="plan" style={{display:tier===r.name?'none':'inline-block'}} value={r.name}  id={r.name} onChange={e => getTier(e.target.value)} checked={tier === r.name}/>
                                         {r.name.toUpperCase()}
@@ -59,31 +59,31 @@ const Payment = ({tier,getTier,getPath,getCompo}) => {
                             <p>2. Billing Information</p>
 
                             <span style={{display:'inline-block'}}>
-                                <label for='name' style={{display:'block'}}>FULL NAME</label>
+                                <label htmlFor='name' style={{display:'block'}}>FULL NAME</label>
                                 <input type="text" name="name" id="name"/>
                             </span>
 
                             <span style={{display:'inline-block'}}>
-                                <label for='address' style={{display:'block'}}>BILLING ADDRESS</label>
+                                <label htmlFor='address' style={{display:'block'}}>BILLING ADDRESS</label>
                                 <input type="text" name="address" id="address"/>
                             </span>
 
                             <div className='split'>
 
                                 <span style={{display:'inline-block'}}>
-                                    <label for='city' style={{display:'block'}}>CITY</label>
+                                    <label htmlFor='city' style={{display:'block'}}>CITY</label>
                                     <input type="text" name="city" id="city"/>
                                 </span>
 
                                 <span style={{display:'inline-block'}}>
-                                    <label for='postal' style={{display:'block'}}>POSTAL CODE</label>
+                                    <label htmlFor='postal' style={{display:'block'}}>POSTAL CODE</label>
                                     <input type="text" name="postal" id="postal"/>
                                 </span>
 
                             </div>
 
                             <span style={{display:'inline-block'}}>
-                                <label for='country' style={{display:'block'}}>COUNTRY</label>
+                                <label htmlFor='country' style={{display:'block'}}>COUNTRY</label>
                                 <input type="text" name="country" id="country"/>
                             </span>
 
@@ -92,28 +92,28 @@ const Payment = ({tier,getTier,getPath,getCompo}) => {
                         <div className='credit' style={{display:'flex',flexDirection:'column'}}>
                             <p>3. Credit Card Information</p>
                             <span style={{display:'inline-block'}}>
-                                <label for='card-name' style={{display:'block'}}>CARDHOLDER'S NAME</label>
+                                <label htmlFor='card-name' style={{display:'block'}}>CARDHOLDER'S NAME</label>
                                 <input type="text" name="card-name" id="card-name"/>
                             </span>
 
                             <span style={{display:'inline-block'}}>
-                                <label for='card-number' style={{display:'block'}}>CARD NUMBER</label>
+                                <label htmlFor='card-number' style={{display:'block'}}>CARD NUMBER</label>
                                 <input type="text" name="card-number" id="card-number"/>
                             </span>
 
                             <div className='split'>
                                 <span style={{display:'inline-block'}}>
-                                    <label for='expiry-month' style={{display:'block'}}>EXP MONTH</label>
+                                    <label htmlFor='expiry-month' style={{display:'block'}}>EXP MONTH</label>
                                     <input type="text" name="expiry-month" id="expiry-month"/>
                                 </span>
                                 <span style={{display:'inline-block'}}>
-                                    <label for='expiry-year' style={{display:'block'}}>EXP YEAR</label>
+                                    <label htmlFor='expiry-year' style={{display:'block'}}>EXP YEAR</label>
                                     <input type="text" name="expiry-year" id="expiry-year"/>
                                 </span>
                             </div>
                             
                             <span style={{display:'inline-block'}}>
-                                <label for='cvv' style={{display:'block'}}>CVV</label>
+                                <label htmlFor='cvv' style={{display:'block'}}>CVV</label>
                                 <input type="text" name="cvv" id="cvv"/>
                             </span>
 

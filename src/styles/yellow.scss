@@ -2,21 +2,19 @@
 
 
 .yellow {
-    scroll-snap-align: start;
-    background-color:#FFB33F ;
+    // scroll-snap-align: start;
+    // background-color:#FFB33F ;
+    background: url('https://res.cloudinary.com/jeremiahcanlas/image/upload/v1617168699/speer/Image_4_gvaafj.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 20%;
     height: 100vh;
     width: 100%;
-    // overflow: hidden;
     display: flex;
-    // position: relative;
 
     @include md {
         scroll-snap-align: start;
-        background: url('https://res.cloudinary.com/jeremiahcanlas/image/upload/v1617168699/speer/Image_4_gvaafj.png');
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center center;
-    
+        background-position: center center;    
     }
 
     .content{
@@ -55,7 +53,7 @@
         overflow: hidden!important;
         height: 100vh;
         width: 100%;
-        display: none;
+        display: block;
 
         @include md {
             display: block;

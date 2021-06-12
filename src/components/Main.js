@@ -9,7 +9,7 @@ import {useLocation} from'react-router-dom'
 
 
 
-const Main = ({getCompo,getPath}) => {
+const Main = ({getCompo,getPath,isMobile}) => {
 const {pathname} = useLocation()
 
 
@@ -30,6 +30,8 @@ getCompo('','white')
             onChange={isVisible => {
             getCompo(isVisible&&'hero','white')
             }}
+            offset={{bottom:10}}
+            partialVisibility
         >
             <Hero/>
         </VisibilitySensor>
@@ -37,8 +39,9 @@ getCompo('','white')
         <VisibilitySensor
             onChange={isVisible => {
             getCompo(isVisible&&'sound','#D34848')
-
             }}
+            offset={{bottom:10}}
+            partialVisibility
         >
             <Sound/>
         </VisibilitySensor>
@@ -46,16 +49,20 @@ getCompo('','white')
         <VisibilitySensor
             onChange={isVisible => {
             getCompo(isVisible&&'yellow','#FFB33F')
-        }}
+            }}
+            offset={{bottom:10}}
+            partialVisibility
         >
-            <Yellow/>
+            <Yellow isMobile={isMobile}/>
         </VisibilitySensor>
 
         <VisibilitySensor
             onChange={isVisible => {
             getCompo(isVisible&&'black','white')
+            }}
+            offset={{bottom:10}}
 
-        }}
+            partialVisibility
         >
             <Black/>
         </VisibilitySensor>
@@ -63,8 +70,10 @@ getCompo('','white')
         <VisibilitySensor
             onChange={isVisible => {
             getCompo(isVisible&&'blue','#1FE1E9')
+            }}
+            offset={{top:10}}
 
-        }}
+            partialVisibility
         >
             <Blue/>
         </VisibilitySensor>

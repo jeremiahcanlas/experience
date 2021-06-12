@@ -3,9 +3,6 @@ import '../styles/hero.scss'
 import { imageData } from '../utils/imageData';
 import {motion} from 'framer-motion'
 import TryItNow from './buttons/TryItNow';
-import ReactGlTransitionImage from 'react-gl-transition-image';
-import {perlin} from 'gl-transitions'
-
 
 
 //Image Carousel from scratch
@@ -15,6 +12,7 @@ const Hero = () => {
 
     // console.log(current)
 
+    //use this to automate a carousel
     useEffect(() => {
         const timer = setTimeout(() => {
             current === length -1?setCurrent(0):setCurrent(current+1)
