@@ -71,7 +71,6 @@ const Nav = ({component:{compo,color},path}) => {
                     className='hamburger' 
                     style={{color:expand?color:path === '/checkout'?'black':'white'}}
                     onClick={e => toggleExpand(!expand)}
-                    // animate={{color:expand?color:path === '/checkout'?'black':'white'}}
                     transition={{duration:1,type:'tween'}}
                     whileHover={{scale:1.1}}
                     >
@@ -89,7 +88,7 @@ const Nav = ({component:{compo,color},path}) => {
                                 initial={{opacity:0}}
                                 animate={{opacity:1}}
                                 transition={{duration:1,type:'tween'}}
-                            >EXP|CON
+                            >exp|con
                             </motion.span>
                         </Link>
                     </div>

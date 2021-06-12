@@ -3,6 +3,7 @@ import '../styles/footer.scss'
 import TryItNow from './buttons/TryItNow';
 
 const Footer = ({path}) => {
+    const year = new Date();
 
     return (
         <div className='footer' style={{height:path ==='/checkout'&&'30vh'}}>
@@ -49,8 +50,8 @@ const Footer = ({path}) => {
                     <p>support@experienceconcerts.co</p>
                 </div>
                 <div style={{textAlign:'center'}}>
-                    <h1>EXP|CON</h1>
-                    <p>2019 &copy; All Rights Reserved | Speer Technologies Incorporated</p>
+                    <h1>exp|con</h1>
+                    <p> {year.getFullYear()} &copy; All Rights Reserved | Jeremiah Canlas</p>
                 </div>
             </div>
         </div>

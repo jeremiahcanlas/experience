@@ -11,6 +11,10 @@ const [current,setCurrent] = useState(0)
 
 useEffect(() => {
     getPath(pathname)
+
+    return () => {
+        getPath(pathname)
+    }
 },[])
 
 useEffect(() => {

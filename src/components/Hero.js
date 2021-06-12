@@ -10,8 +10,6 @@ const Hero = () => {
     const [current,setCurrent] = useState(0)
     const length = imageData.length
 
-    // console.log(current)
-
     //use this to automate a carousel
     useEffect(() => {
         const timer = setTimeout(() => {
@@ -20,7 +18,6 @@ const Hero = () => {
 
         return () => clearTimeout(timer) //this will unmount the timer and wont mess up the timeout
     },[current,length])
-
 
     //will render star icons depends on rating
     const circles = (length,current) => {
@@ -33,19 +30,9 @@ const Hero = () => {
         return circle
     }
 
-
-// const next = () => {
-//     setCurrent(current === length - 1?0:current+1)
-// }
-
-// const prev = () => setCurrent(current === 0? length - 1: current -1 )
-
-
     return (
         <section className='hero-container'>
             
-            {/* <i className="fa fa-arrow-left left-arrow" aria-hidden="true" onClick={e => prev()} ></i>
-            <i className="fa fa-arrow-right right-arrow" aria-hidden="true" onClick={e => next()}></i>             */}
             {
                 imageData.map((slide,index)=> 
                 <div className='active' key={index+1}>
@@ -59,11 +46,6 @@ const Hero = () => {
                      animate={{opacity:1, scale:1}}
                      transition={{duration:0.6}}
                      />)
-                        // <ReactGlTransitionImage
-                        // src={slide.image}
-                        // // transition={perlin}
-                        // progress={1}
-                        // />
                      }
                 </div>
                 )
@@ -77,8 +59,6 @@ const Hero = () => {
                     {circles(length,current)}
                </div>
             </div>
-            
-
         </section>
     );
 }
