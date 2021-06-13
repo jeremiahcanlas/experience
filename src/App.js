@@ -1,5 +1,4 @@
 import React,{useState} from 'react'
-import './styles/app.scss'
 
 import Nav from './components/Nav'
 import Footer from './components/Footer'

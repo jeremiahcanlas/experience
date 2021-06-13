@@ -6,6 +6,7 @@ import Yellow from './Yellow'
 import Blue from './Blue'
 import Black from './Black'
 import {useLocation} from'react-router-dom'
+import '../styles/main.scss'
 
 
 

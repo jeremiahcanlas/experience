@@ -1,5 +1,4 @@
 import React,{useState,useEffect} from 'react';
-import '../styles/sound.scss'
 import  SeeDemo from '../components/buttons/SeeDemo'
 import {motion} from 'framer-motion'
 

@@ -1,5 +1,5 @@
 import React,{useState,useEffect} from 'react';
-import '../styles/hero.scss'
+// import '../styles/hero.scss'
 import { imageData } from '../utils/imageData';
 import {motion} from 'framer-motion'
 import TryItNow from './buttons/TryItNow';
