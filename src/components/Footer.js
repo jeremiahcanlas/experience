@@ -1,5 +1,4 @@
 import React,{Fragment} from 'react';
-import '../styles/footer.scss'
 import TryItNow from './buttons/TryItNow';
 
 const Footer = ({path}) => {
@@ -51,7 +50,7 @@ const Footer = ({path}) => {
                 </div>
                 <div style={{textAlign:'center'}}>
                     <h1>exp|con</h1>
-                    <p> {year.getFullYear()} &copy; All Rights Reserved | Jeremiah Canlas</p>
+                    <p> {year.getFullYear()} &copy; By yours truly, Jeremiah Canlas</p>
                 </div>
             </div>
         </div>

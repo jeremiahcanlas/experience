@@ -1,6 +1,4 @@
 import React,{useEffect} from 'react';
-import '../styles/payment.scss'
-import '../styles/button.scss'
 import {useLocation} from 'react-router-dom'
 
 
@@ -12,9 +10,6 @@ const Payment = ({tier,getTier,getPath,getCompo}) => {
 
     useEffect(() => {
         getPath(pathname)
-    },[])
-
-    useEffect(() => {
         getCompo('checkout','white')
     },[])
 

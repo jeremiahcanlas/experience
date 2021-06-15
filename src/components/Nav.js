@@ -1,5 +1,4 @@
 import React,{useState,useEffect} from 'react';
-import '../styles/nav.scss'
 import {motion} from 'framer-motion'
 import TryItNow from './buttons/TryItNow';
 import {Link} from 'react-router-dom'

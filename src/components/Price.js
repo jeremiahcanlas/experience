@@ -1,5 +1,4 @@
 import React,{useEffect,useState} from 'react';
-import '../styles/price.scss'
 import {useLocation,Link} from 'react-router-dom'
 // import {useMediaQuery} from 'react-responsive'
 import { motion } from 'framer-motion';

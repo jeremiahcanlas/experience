@@ -1,5 +1,4 @@
 import React from 'react';
-import '../../styles/button.scss'
 import {motion} from 'framer-motion'
 import {Link} from 'react-router-dom'
 

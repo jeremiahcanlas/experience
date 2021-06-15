@@ -1,9 +1,16 @@
 @import './viewport';
 @import './hero';
 @import './sound';
+@import './yellow';
+@import './black';
+@import './blue';
+@import './footer';
+@import './button';
+@import './nav';
+@import './payment';
+@import './price';
 
-
-
+@import './typography';
 
 html{
 
@@ -12,4 +19,8 @@ html{
         -webkit-overflow-scrolling: touch;
     }
 
+}
+
+body {
+    margin:0;
 }

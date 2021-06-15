@@ -1,5 +1,4 @@
 import React,{useState} from 'react';
-import '../styles/yellow.scss'
 import {motion} from 'framer-motion'
 import SeeDemo from './buttons/SeeDemo'
 
