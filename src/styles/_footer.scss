@@ -89,6 +89,7 @@
         .footer-perks{
             background-color: #D34848;
             padding: 3rem 1rem;
+            z-index: 999;
 
             @include md {
                 height: 100%;
