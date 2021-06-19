@@ -13,7 +13,7 @@
 @import './typography';
 
 html{
-
+    overflow-x: hidden; 
     @include md {
         scroll-snap-type: y mandatory;
         -webkit-overflow-scrolling: touch;
@@ -26,5 +26,5 @@ html,body {
     height: 100%;
     margin: 0px;
     padding: 0px;
-    // overflow-x: hidden; 
+    
 }

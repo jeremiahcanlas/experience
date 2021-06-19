@@ -1,5 +1,5 @@
 import React,{useState,useEffect} from 'react';
-import {motion} from 'framer-motion'
+import {motion,AnimateSharedLayout} from 'framer-motion'
 import {Link} from 'react-router-dom'
 
 
@@ -29,40 +29,27 @@ const Nav = ({component:{compo,color},path}) => {
     },[compo])
 
     const list = {
-        visible:{display:'block',
+        visible:{
+        display:'block',
+        opacity:1,
         transition:{
             when:'beforeChildren',
             staggerChildren:0.3
         }
     },
-        hidden:{display:'none',
-        transition:{
-            when:'afterChildren',
-            staggerChildren:0.05
-        }
+        hidden:{
+        display:'none'
     }
     }
 
     const navItem = {
-        visible: {opacity:1, x:0},
-        hidden: { opacity:0,x:-200}
+        visible: {opacity:1, y:0},
+        hidden: {opacity:0, y:100}
     }
    
     return (
             
             <div className='nav'>
-
-
-
-
-                    <motion.div 
-                    className='hamburger' 
-                    onClick={e => toggleExpand(!expand)}
-                    transition={{duration:0.2,type:'tween'}}
-                    whileHover={{scale:1.1}}
-                    >
-                        <i className="fa fa-bars" aria-hidden="true"></i>
-                    </motion.div>
 
                    
 
@@ -78,40 +65,61 @@ const Nav = ({component:{compo,color},path}) => {
                         </Link>
                     </div>
 
-                
-
-                <motion.ul
-                    className={`dropdown`}
-                    variants={list}
-                    initial='hidden'
-                    animate={expand?'visible':'hidden'}
-                >
-                    {
-                    navItems.map((item,index) => 
-                    <motion.li 
-                    className='nav-item'
-                    variants={navItem}
-                    key={index}
+                    <motion.div 
+                    className='hamburger' 
+                    onClick={e => toggleExpand(!expand)}
+                    transition={{duration:0.2,type:'tween'}}
+                    whileHover={{scale:1.1}}
                     >
-                        <Link to={item.path} onClick={e => toggleExpand(false)}>
-                            <motion.span
-                            whileHover={color!=='white'&&{color}}
-                            key={index}
-                            >
-                                {item.item.toUpperCase()}
-                            </motion.span>
-                        </Link>
-                    </motion.li>
-                        ) 
-                    }
-                </motion.ul>
+                        <i className="fa fa-bars" aria-hidden="true"></i>
+                    </motion.div>
 
+
+                
+            <AnimateSharedLayout>
                 <motion.div 
-                    className={`nav-cover`}
-                    initial={{scale:0,opacity:0}} 
-                    animate={{scale:expand?1:0,opacity:1}}
-                    transition={{duration:0.3}}
-                    />           
+                    className='nav-cover'
+                    initial={{width:0,height:0}} 
+                    animate={expand?{width:'100vw',height:'100vh'}:{width:0,height:0}}
+                    transition={{ease:[.8,.5,.3,.1]}}
+                    > 
+                    <AnimateSharedLayout>
+                        <motion.ul
+                            className={`dropdown`}
+                            variants={list}
+                            initial='hidden'
+                            animate={expand?'visible':'hidden'}
+                            >
+                                {
+                                navItems.map((item,index) => 
+                                <motion.li 
+                                className='nav-item'
+                                variants={navItem}
+                                key={index}
+                                >
+                                    <Link to={item.path} onClick={e => toggleExpand(false)}>
+
+                                        <motion.span
+                                        whileHover={color!=='white'&&{color}}
+                                        key={index}
+                                        >
+                                            {item.item.toUpperCase()}
+                                        </motion.span>
+
+                                    </Link>
+                                </motion.li>
+                                    ) 
+                                }
+                            </motion.ul>
+
+
+                    </AnimateSharedLayout>
+
+                    </motion.div>
+
+
+            </AnimateSharedLayout>
+
             </div>
         
     );
