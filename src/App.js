@@ -14,7 +14,7 @@ import useWindowDimensions from './utils/viewport'
 
 function App() {
 
-  const {height,width}  = useWindowDimensions()
+  const {width}  = useWindowDimensions()
 
   //this will check if viewport width is less than 688px
   const isMobile = width < 688;

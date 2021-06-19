@@ -1,6 +1,5 @@
 import React,{useEffect,useState} from 'react';
 import {useLocation,Link} from 'react-router-dom'
-// import {useMediaQuery} from 'react-responsive'
 import { motion } from 'framer-motion';
 
 const Price = ({getPath,getTier,getCompo,isMobile}) => {
@@ -11,14 +10,15 @@ const [current,setCurrent] = useState(0)
 useEffect(() => {
     getPath(pathname)
 
-    return () => {
-        getPath(pathname)
-    }
+    
+    getCompo('price','white')
+    
+
+// eslint-disable-next-line react-hooks/exhaustive-deps
 },[])
 
-useEffect(() => {
-    getCompo('price','white')
-},[])
+
+
 
 const plans = [
     {

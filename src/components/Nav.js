@@ -1,6 +1,5 @@
 import React,{useState,useEffect} from 'react';
 import {motion} from 'framer-motion'
-import TryItNow from './buttons/TryItNow';
 import {Link} from 'react-router-dom'
 
 
@@ -21,10 +20,9 @@ const Nav = ({component:{compo,color},path}) => {
             item:'Pricing',
             path:'/price'
         }
-        ]
+    ]
 
     const [expand,toggleExpand] = useState(false)
-
 
     useEffect(() => {
         toggleExpand(!compo&&false)
@@ -51,52 +49,37 @@ const Nav = ({component:{compo,color},path}) => {
     }
    
     return (
-        <div className='navbar'>
             
             <div className='nav'>
 
-                <div className='menu-container'>
-                    <div className='circle-container'>
 
-                    <motion.div 
-                    className={`circle`}
-                    initial={{x:-100,opacity:0}} 
-                    animate={{x:expand?0:-400,opacity:1}}
-                    transition={{duration:0.3}}
-                    style={{backgroundColor: compo === 'black'?'#1FE1E9':'black'}}
-                    />
+
 
                     <motion.div 
                     className='hamburger' 
-                    style={{color:expand?color:path === '/checkout'?'black':'white'}}
                     onClick={e => toggleExpand(!expand)}
-                    transition={{duration:1,type:'tween'}}
+                    transition={{duration:0.2,type:'tween'}}
                     whileHover={{scale:1.1}}
                     >
-
                         <i className="fa fa-bars" aria-hidden="true"></i>
-
                     </motion.div>
 
-                    </div>
+                   
 
                     <div className='nav-brand'>
                         <Link to='/'>
                             <motion.span
-                                style={{color:expand?color:path === '/checkout'?'black':'white'}}
                                 initial={{opacity:0}}
                                 animate={{opacity:1}}
                                 transition={{duration:1,type:'tween'}}
-                            >exp|con
+                            >
+                                exp|rally
                             </motion.span>
                         </Link>
                     </div>
-                </div>
 
-                {/* will only render 'try it now' cta if path is '/' and only certain components */}
-                {compo === 'hero'?(''):!compo?(''):path === '/'&&<TryItNow/>}
+                
 
-            </div>
                 <motion.ul
                     className={`dropdown`}
                     variants={list}
@@ -122,9 +105,15 @@ const Nav = ({component:{compo,color},path}) => {
                         ) 
                     }
                 </motion.ul>
-           
 
-        </div>
+                <motion.div 
+                    className={`nav-cover`}
+                    initial={{scale:0,opacity:0}} 
+                    animate={{scale:expand?1:0,opacity:1}}
+                    transition={{duration:0.3}}
+                    />           
+            </div>
+        
     );
 }
 

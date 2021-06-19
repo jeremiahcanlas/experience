@@ -11,6 +11,8 @@ const Payment = ({tier,getTier,getPath,getCompo}) => {
     useEffect(() => {
         getPath(pathname)
         getCompo('checkout','white')
+
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     },[])
 
 
