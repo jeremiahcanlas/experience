@@ -89,6 +89,7 @@ const Nav = ({component:{compo,color},path}) => {
                     className='nav-cover'
                     initial={{width:0,height:0}} 
                     animate={expand?{width:'100vw',height:'100vh'}:{width:0,height:0}}
+                    onClick={e => toggleExpand(!expand)}
                     transition={{ease:[.8,.5,.3,.1]}}
                     > 
                     <AnimateSharedLayout>
@@ -108,7 +109,6 @@ const Nav = ({component:{compo,color},path}) => {
                                     <Link to={item.path} onClick={e => toggleExpand(false)}>
 
                                         <motion.span
-                                        whileHover={color!=='white'&&{color}}
                                         key={index}
                                         >
                                             {item.item.toUpperCase()}

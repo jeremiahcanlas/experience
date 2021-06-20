@@ -29,8 +29,8 @@
 
     .nav-brand {
         letter-spacing: 4.8px;
-        font-family:$font ;
         font-weight: 400; 
+        font-family: $font;
         color: white;
         cursor: point;
         margin: 1rem 2rem;
@@ -50,6 +50,7 @@
         top: 0;
         right: 0;
         z-index: -10;
+        opacity: 0.9;
         
 
         .dropdown {
@@ -59,27 +60,48 @@
             z-index: 110;
             list-style-type: none;
             text-align: center;
+            margin: 0;
+            padding: 0;
     
             .nav-item{
                 font-size: 3rem;
                 margin-bottom: 1rem;
                 letter-spacing: 4.7px;
-                font-family: $font;
-                font-weight: 700;
-                cursor: pointer;
+                font-family: $bold;
                 z-index: 999999;
     
-                @include md {
-                    font-size: 4rem;
-                }
-    
+              
                 a{
+                    margin: 0;
+                    font-size: 3rem;
+                    text-decoration: none;
+                    -webkit-text-stroke: 0.02em white;
+                    color: transparent;
+                    cursor: pointer;
                     background-clip: text;
-                    -webkit-text-stroke-width: 0.2px;
-                    -webkit-text-stroke-color: whitesmoke;
-                    -webkit-background-clip: text;
                     -webkit-text-fill-color: transparent;
+                    background-image: linear-gradient(
+                      to right,
+                      white,
+                      white 50%,
+                      transparent 50%
+                    );
+                    background-size: 200% 100%;
+                    background-position: 100%;
+                    transition: all 0.5s cubic-bezier(0, 0, 0.23, 1);
+
+                    &::after {
+                        -webkit-text-stroke: 0px;
+                        -webkit-text-fill-color: transparent;
+                        transform: translate(-40px, 8px);
+                        letter-spacing: 2px;
+                    }
                 }
+
+                a:hover {
+                    color: white;
+                    background-position: 0%;
+                  }
             }
         
         }   

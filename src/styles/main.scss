@@ -1,3 +1,5 @@
+@import './typography';
+
 @import './viewport';
 @import './hero';
 @import './sound';
@@ -10,7 +12,7 @@
 @import './payment';
 @import './price';
 
-@import './typography';
+
 
 html{
     overflow-x: hidden; 
