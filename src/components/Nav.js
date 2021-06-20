@@ -43,8 +43,16 @@ const Nav = ({component:{compo,color},path}) => {
     }
 
     const navItem = {
-        visible: {opacity:1, y:0},
-        hidden: {opacity:0, y:100}
+        visible: {
+            opacity:1,
+             y:0,
+             transition:{
+                 duration:0.6
+             }
+            },
+        hidden: {opacity:0, y:100, transition:{
+            duration:0.3
+        }}
     }
    
     return (
@@ -71,7 +79,7 @@ const Nav = ({component:{compo,color},path}) => {
                     transition={{duration:0.2,type:'tween'}}
                     whileHover={{scale:1.1}}
                     >
-                        <i className="fa fa-bars" aria-hidden="true"></i>
+                        <i className={expand?'fa fa-times':'fa fa-bars'} aria-hidden="true"></i>
                     </motion.div>
 
 

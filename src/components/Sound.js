@@ -36,8 +36,8 @@ const Sound = () => {
     return (
         <div className='sound-container'>
             <div className='superior'>
-                <h1>SUPERIOR SOUND</h1>
-                <p>Experience live versions of your <br/> favourite songs</p>
+                <h1>EXCEPTIONAL SOUND</h1>
+                <p>Experience live versions of your <br/> favourite rally team</p>
                 <SeeDemo/>
             </div>
             <div 
