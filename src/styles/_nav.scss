@@ -12,7 +12,8 @@
     .hamburger {
         z-index: 3;
         color: white;
-        margin: 1rem 2rem;
+        margin: 1.5rem 2rem;
+        cursor: pointer;
         
         i{
             
@@ -28,47 +29,47 @@
     }
 
     .nav-brand {
-        letter-spacing: 4.8px;
-        font-weight: 400; 
-        font-family: $font;
-        color: white;
+        letter-spacing: 6px;
+        font-family: $logo;
         cursor: point;
         margin: 1rem 2rem;
-
+        opacity: 0.8;
 
         span{
             text-decoration: none;
             color: white;
             font-size: 2rem;
-            font-weight: 500;
         }
     }
 
     .nav-cover {
         background: black;
         position: absolute;
+        display: flex;
+        justify-content: center;
+        align-content: center;
         top: 0;
         right: 0;
         z-index: -10;
-        opacity: 0.9;
+        opacity: 1;
         
 
         .dropdown {
-            position: absolute;
-            top:40%;
-            left: 40%;
             z-index: 110;
             list-style-type: none;
             text-align: center;
-            margin: 0;
+            margin: auto auto;
+            display: block;
             padding: 0;
+            
+
     
             .nav-item{
                 font-size: 3rem;
                 margin-bottom: 1rem;
                 letter-spacing: 4.7px;
                 font-family: $bold;
-                z-index: 999999;
+                z-index: 999;
     
               
                 a{

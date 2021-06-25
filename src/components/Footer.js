@@ -1,5 +1,5 @@
 import React,{Fragment} from 'react';
-import TryItNow from './buttons/TryItNow';
+import Black from './Black'
 
 const Footer = ({path}) => {
     const year = new Date();
@@ -9,34 +9,15 @@ const Footer = ({path}) => {
             <div className='footer-black' style={{display:path === '/checkout'&&'none'}}>
             {
                 path === '/price'?(
-                    <div className='footer-perks'>
-                        <h1 className='perks-header'>PERKS</h1>
-                        <div className="perks">
-                            <div className='perk'>
-                                <div className="border" ></div>
-                                <h3 >Subscription Payment Model</h3>
-                                <p>No commitment, cancel anytime. Never worry about forgetting a payment again!</p>
-                            </div>
-                            <div className='perk' >
-                                <div className="border" ></div>
-                                <h3 >No Fee Cancellation Policy</h3>
-                                <p>No commitment, cancel anytime. Never worry about forgetting a payment again!</p>
-                            </div>
-                            <div className='perk'>
-                                <div className="border" ></div>
-                                <h3 >Subscription Payment Model</h3>
-                                <p>No commitment, cancel anytime. Never worry about forgetting a payment again!</p>
-                            </div>
-                        </div>
-                    </div>
+                    <Black />
                 ):(
                     <Fragment>
                         <div className='content'>
-                            <h1>GET EXP|CON NOW</h1>
+                            <h1 className='fancy'>GET EXP.RALLY NOW</h1>
                             <p>Purchase and download the app</p>
                         </div>
                         <div className='footer-btn'>
-                            <TryItNow/>                    
+                            {/* <TryItNow/>                     */}
                         </div>
                     </Fragment>
                 )
@@ -46,11 +27,11 @@ const Footer = ({path}) => {
             <div className='footer-purple'>
                 <div>
                     <i className='fa fa-envelope'></i>
-                    <p>support@experienceconcerts.co</p>
+                    <p>SUPPORT@EXPERIENCERALLY.COM</p>
                 </div>
                 <div style={{textAlign:'center'}}>
-                    <h1>exp|con</h1>
-                    <p> {year.getFullYear()} &copy; By yours truly, Jeremiah Canlas</p>
+                    <h1 className='fancy'>EXP.RALLY</h1>
+                    <p> {year.getFullYear()} &copy; By yours truly, Jeremiah Canlas ⚡️</p>
                 </div>
             </div>
         </div>

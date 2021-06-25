@@ -1,51 +1,43 @@
 
 .blue {
-    scroll-snap-align: start;
-    overflow: hidden;
     height: 100vh;
     width: 100%;
-    background-color: #1FE1E9;
+    background-color: #475B63;
     display: flex;
     flex-direction: row;
 
     @include md {
         scroll-snap-align: start;
-        height: 100vh;
     }
 
     
 
-    .speaker{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-content: center;
-        padding: 8rem;
-        display: none;
-        
+
+
+    img{
+        height: 10rem;
+        width: 10rem;
+        margin: auto 5rem;
+        display:none;
 
         @include md {
             display: block;
         }
-
-
-        img{
-            position: relative;
-            height: 12rem;
-        }
     }
+   
 
     .review-container {
         display: flex;
         flex-direction: column;
         justify-content: center;
-
+        min-width:35rem;
 
         h1 {
-            color:white;
-            letter-spacing: 7.4px;
+            font-family: $bold;
+            letter-spacing: 7px;
             margin-left: 1.2rem;
             font-size: 1.5rem;
+            cursor: default;
 
             @include md {
                 font-size: 2.5rem;
@@ -63,11 +55,13 @@
             .review{
                 padding: 0 1.2rem;
                 margin: 1rem 0;
+                max-width: 18rem;
 
 
                 h3 {
                     color: white;
                     font-size: .8rem;
+                    font-family: $font;
                     letter-spacing: 3.5px;
 
                     @include md {
@@ -92,7 +86,8 @@
     
                 p{
                     font-size: .8rem;
-                    letter-spacing: 3.5px;
+                    letter-spacing: 3px;
+                    font-family: $font;
 
                     @include md {
                         font-size: 1.2rem;

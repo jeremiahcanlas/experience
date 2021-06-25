@@ -1,7 +1,7 @@
 import React,{useState,useEffect} from 'react';
 import { imageData } from '../utils/imageData';
 import {motion,AnimatePresence} from 'framer-motion'
-import TryItNow from './buttons/TryItNow';
+// import TryItNow from './buttons/TryItNow';
 
 
 //Image Carousel from scratch
@@ -44,10 +44,30 @@ const Hero = () => {
             }
 
             <div className='main'>
-                <h1>INTERACTIVE RALLY EXPERIENCE</h1>
-                <p>Experience breathtaking rally like never <br/> before and from the comfort of your own home.</p>
-                <TryItNow/>
+                <motion.h1
+                initial={{opacity:0}}
+                animate={{opacity:0.8}}
+                transition={{duration:4}}
+                >
+                    INTERACTIVE RALLY EXPERIENCE
+                </motion.h1>
+                <motion.p
+                initial={{opacity:0}}
+                animate={{opacity:0.8}}
+                transition={{duration:4}}
+                >Experience breathtaking rally like never <br/> before and from the comfort of your own home.</motion.p>
+                {/* <TryItNow/> */}
             </div>
+            <motion.div
+            initial={{opacity:0,y:-10}}
+            animate={{opacity:0.5,y:0}}
+            transition={{delay:3,duration:3}}
+            
+            className='scroll'>
+                <p>scroll down for more</p>
+                <i className='fa fa-angle-down'aria-hidden="true"></i>
+
+            </motion.div>
             
         </section>
     );

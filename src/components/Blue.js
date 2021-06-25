@@ -1,24 +1,25 @@
 import React from 'react';
+import image from '../utils/img/rating.png'
 
 const Blue = () => {
 
     const reviews = [
         {
-            title:'Artist',
+            title:'Subaru Fan',
             rate:5,
-            review:'Love it, it’s the Best.I can’t live without it!'
+            review:'This is a great subscription service!'
         }
         ,
         {
-            title:'Producer',
-            rate:4,
-            review:'Love it, it’s the Best.I can’t live without it!'
+            title:'Ford',
+            rate:5,
+            review:'Mind-blowing quality! Highly Recommend! '
         }
         ,
         {
-            title:'Music Fan',
-            rate:4,
-            review:'Love it, it’s the Best.I can’t live without it!'
+            title:'Hyundai',
+            rate:5,
+            review:'Outstanding customer service and live stream quality is phenomenal'
         }
     ]
 
@@ -37,12 +38,9 @@ const Blue = () => {
 
     return (
        <div className="blue">
-           <div className="speaker">
-                <img style={{marginRight:'4rem'}} src="https://res.cloudinary.com/jeremiahcanlas/image/upload/v1618087246/speer/speaker1_ufxhey.png" alt="speaker"/>
-                <img style={{marginLeft:'4rem'}}  src="https://res.cloudinary.com/jeremiahcanlas/image/upload/v1618086685/speer/speaker2_lcrqag.png" alt="speaker"/>
-           </div>
+            <img src={image} alt="thumbs up" />
            <div className="review-container">
-            <h1>REVIEWS</h1>
+            <h1 className='fancy'>REVIEWS</h1>
             <div className="reviews">
                 {reviews.map((i,index) => 
                     <div className='review' key={index}>

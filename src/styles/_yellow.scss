@@ -2,43 +2,68 @@
 .yellow {
     // scroll-snap-align: start;
     // background-color:#FFB33F ;
-    background: url('https://res.cloudinary.com/jeremiahcanlas/image/upload/v1617168699/speer/Image_4_gvaafj.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 20%;
+    // background: url('https://res.cloudinary.com/jeremiahcanlas/image/upload/v1617168699/speer/Image_4_gvaafj.png');
+    // background-repeat: no-repeat;
+    // background-size: cover;
+    // background-position: 20%;
     height: 100vh;
-    width: 100%;
+    width: 100vw;
     display: flex;
 
     @include md {
         scroll-snap-align: start;
-        background-position: center center;    
+        // background-position: center center;    
+    }
+
+    #video {
+        left: -30rem;
+        top: 0;
+        position: fixed;
+        min-height: 100vh;
+        min-width: 100%;
+        z-index: -20;
+
+        @include md {
+            left:0;
+        }
     }
 
     .content{
         display: flex;
         flex-direction: column;
         justify-content: center;
-        margin-left: auto;
         height: 100vh;
-        width: 100%;
+        width: 100vw;
         z-index: 99;
         padding: 0 1rem;
+        background-color: rgba(0,0,0,0.7);
 
-        @include  md {
-            width: 50%;
+        @include md {
+            padding: 0 5rem;
         }
+
+   
         
         
         h1{
-            font-size: 3rem;
-            letter-spacing: 7.4px;
-            color: white;
+            font-size: 2rem;
+            letter-spacing: 7px;
+            font-family: $bold;
+
+            @include md {
+                font-size: 3rem;
+            }
         }
 
         p{
-            font-size: 1.8rem;
+            font-size: 1rem;
             letter-spacing: 5.1px;
+            font-family: $font;
+            color: whitesmoke;
+
+            @include md {
+                font-size: 1.2rem;
+            }
 
         }
 
@@ -57,14 +82,6 @@
             display: block;
         }
 
-        // .circle{
-        //     position:relative;
-        //     margin:20px auto;
-        //     width: 150px;
-        //     height:150px;
-        //     box-shadow: 0 0 0 10px #FFB33F; /* !!! */
-        //     border-radius:50%;
-        // }
 
         svg{
             

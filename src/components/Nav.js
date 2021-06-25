@@ -67,8 +67,9 @@ const Nav = ({component:{compo,color},path}) => {
                                 initial={{opacity:0}}
                                 animate={{opacity:1}}
                                 transition={{duration:1,type:'tween'}}
+                                onClick={e => toggleExpand(false)}
                             >
-                                exp|rally
+                                EXP.RALLY
                             </motion.span>
                         </Link>
                     </div>
