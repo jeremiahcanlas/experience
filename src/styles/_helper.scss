@@ -1,5 +1,18 @@
+$span : blue;
+
+
 .fancy {
     -webkit-text-stroke: 0.03em white;
     color: transparent;
     background-clip: text;
+    
+}
+
+.glow {
+    -webkit-text-stroke: 0.06em transparent;
+    background: -webkit-linear-gradient(right,  rgba(255,0,0,1) 0%,rgba(255,255,0,1) 19%,rgba(0,255,0,1) 38%,rgba(0,255,255,1) 51%,rgba(0,0,255,1) 67%,rgba(255,0,255,1) 83%,rgba(255,0,0,1) 99%); /* Chrome10+,Safari5.1+ */
+    -webkit-background-clip: text;
+    background-clip: text;
+    text-shadow: 0px 0px 10px white;
+    color:rgba(0,0,0,0.8);
 }

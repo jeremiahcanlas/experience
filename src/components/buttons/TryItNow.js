@@ -6,18 +6,20 @@ const TryItNow = () => {
 
 
     return (
-
-            <Link to='/price' className='price-btn'>
-            <motion.p
-                className='btn-mix-noborder' 
-                data-text='try it now' 
+      
+            <Link to='/price'>
+                <div className='tryItBtn'>
+                <motion.p
                 initial={{opacity:0}}
                 animate={{opacity:1}}
                 transition={{type:'tween', duration:0.5}}
             >
                 TRY IT NOW
-            </motion.p>   
+            </motion.p> 
+                </div>  
             </Link>
+      
+
      
     );
 }

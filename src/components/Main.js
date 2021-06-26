@@ -10,7 +10,7 @@ import '../styles/main.scss'
 
 
 
-const Main = ({getCompo,getPath,isMobile}) => {
+const Main = ({getCompo,getPath,isMobile,component}) => {
 const {pathname} = useLocation()
 
 
@@ -22,6 +22,7 @@ getPath(pathname)
 
 useEffect(() =>{
 getCompo('','white')
+
 
 // eslint-disable-next-line react-hooks/exhaustive-deps
 },[])
@@ -35,8 +36,7 @@ getCompo('','white')
             onChange={isVisible => {
             getCompo(isVisible&&'hero','white')
             }}
-            offset={{bottom:10}}
-            partialVisibility
+            
         >
             <Hero/>
         </VisibilitySensor>
@@ -45,8 +45,8 @@ getCompo('','white')
             onChange={isVisible => {
             getCompo(isVisible&&'sound','#D34848')
             }}
-            offset={{bottom:10}}
-            partialVisibility
+            
+            
         >
             <Sound/>
         </VisibilitySensor>
@@ -55,19 +55,17 @@ getCompo('','white')
             onChange={isVisible => {
             getCompo(isVisible&&'yellow','#FFB33F')
             }}
-            offset={{bottom:10}}
-            partialVisibility
+            
         >
-            <Yellow isMobile={isMobile}/>
+            <Yellow isMobile={isMobile} component={component}/>
         </VisibilitySensor>
 
         <VisibilitySensor
             onChange={isVisible => {
             getCompo(isVisible&&'black','white')
             }}
-            offset={{bottom:10}}
-
-            partialVisibility
+            
+            
         >
             <Black/>
         </VisibilitySensor>
@@ -76,9 +74,7 @@ getCompo('','white')
             onChange={isVisible => {
             getCompo(isVisible&&'blue','#1FE1E9')
             }}
-            offset={{top:10}}
-
-            partialVisibility
+            
         >
             <Blue/>
         </VisibilitySensor>

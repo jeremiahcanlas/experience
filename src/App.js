@@ -51,7 +51,7 @@ function App() {
         <Nav component={component} path={path}/>
         <ScrollToTop/> 
         <Switch>
-          <Route path='/' exact  render={() => <Main getCompo={getCompo} isMobile={isMobile} getPath={getPath}/>}/>
+          <Route path='/' exact  render={() => <Main getCompo={getCompo}  component={component} isMobile={isMobile} getPath={getPath}/>}/>
           <Route path='/price' render={() => <Price getPath={getPath} getCompo={getCompo} isMobile={isMobile} getTier={getTier}/>}/>
           <Route path='/checkout' render={() => <Payment tier={tier} getPath={getPath} getCompo={getCompo} getTier={getTier}/>} />
         </Switch>

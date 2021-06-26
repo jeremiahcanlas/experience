@@ -3,7 +3,8 @@
     scroll-snap-align: start;
     display: flex;
     flex-direction: column;
-    width: 100%;
+    min-width: 100vw;
+    min-height: 60vh;
 
     @include md {
         scroll-snap-align: start;
@@ -16,11 +17,11 @@
         flex-direction: column; //dynamically set
         background-color: #191919;
         align-content: center;
-        width: 100%;
+        min-width: 100vw;
 
         @include md {
             flex-direction: row;
-            height: 70vh
+            height: 60vh
         }
 
 
@@ -37,7 +38,7 @@
             width: 90%;
 
             @include md {
-                margin: 0 6rem 0 0;
+                margin: 0 auto;
                 // margin-left: 6rem;
                 width: 50%;
                 text-align: left;
@@ -161,11 +162,15 @@
     .footer-purple{
         background-color: #5E33D1;
         height: 30vh;
+        min-width:100vw ;
         display: flex;
+        text-align: center;
         flex-direction: column;
 
         div{
             color: white;
+
+            //company email
             &:first-child{
                 margin: 2rem 1rem;
                 display: flex;
@@ -177,8 +182,7 @@
                 
 
                 p{
-                    margin: 0 1rem;
-                    display: block;
+                    margin-left: 1rem;
                     letter-spacing:3px;
                     font-size: 0.8rem;
                     font-family: $font;
@@ -187,7 +191,14 @@
                         font-size: 1rem;
                     }
                 }
+
+                i{
+                    height: 1rem;
+                    margin: auto 0;
+                }
             }
+
+            //logo and author
             &:last-child{
                 margin-bottom: 5rem;
 
@@ -198,8 +209,10 @@
                 }
 
                 p{
+                    margin: 0 auto;
                     letter-spacing: 2px;
                     font-family: $font;
+                    max-width: 70vw;
                 }
             }
         }

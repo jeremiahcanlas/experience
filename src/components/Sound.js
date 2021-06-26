@@ -7,7 +7,6 @@ const Sound = () => {
             <div className='superior'>
                 <h1>EXCEPTIONAL SOUND</h1>
                 <p>Experience live versions of your <br/> favourite rally team</p>
-                {/* <SeeDemo/> */}
             </div>
             <div className='speakers'>
                 <img style={{marginBottom:'6rem'}} src={image} alt="png"/>

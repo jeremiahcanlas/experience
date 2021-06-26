@@ -1,18 +1,12 @@
 
 .yellow {
-    // scroll-snap-align: start;
-    // background-color:#FFB33F ;
-    // background: url('https://res.cloudinary.com/jeremiahcanlas/image/upload/v1617168699/speer/Image_4_gvaafj.png');
-    // background-repeat: no-repeat;
-    // background-size: cover;
-    // background-position: 20%;
+ 
     height: 100vh;
     width: 100vw;
-    display: flex;
-
+ 
     @include md {
         scroll-snap-align: start;
-        // background-position: center center;    
+           
     }
 
     #video {
@@ -20,7 +14,7 @@
         top: 0;
         position: fixed;
         min-height: 100vh;
-        min-width: 100%;
+        min-width: 100vw;
         z-index: -20;
 
         @include md {
@@ -32,10 +26,10 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
+        align-content: center;
         height: 100vh;
         width: 100vw;
         z-index: 99;
-        padding: 0 1rem;
         background-color: rgba(0,0,0,0.7);
 
         @include md {
@@ -50,49 +44,33 @@
             letter-spacing: 7px;
             font-family: $bold;
 
+
             @include md {
                 font-size: 3rem;
             }
         }
 
         p{
-            font-size: 1rem;
-            letter-spacing: 5.1px;
+            color: white;
             font-family: $font;
-            color: whitesmoke;
+            font-size: 0.8rem;
+            letter-spacing: 3.2px;
+            margin-bottom: 2rem;
+            padding: 0 1rem;
+            cursor:default;
 
             @include md {
                 font-size: 1.2rem;
+                padding: 0;
             }
-
         }
 
+ 
        
     }
 
 
-    .cover{
-        position: absolute;
-        overflow: hidden!important;
-        height: 100vh;
-        width: 100%;
-        display: block;
 
-        @include md {
-            display: block;
-        }
-
-
-        svg{
-            
-            .background{
-                mask: url(#circles);
-                height: 100%;
-                width: 100%;
-            }
-        }
-
-    }
 
 }
 

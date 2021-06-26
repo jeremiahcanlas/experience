@@ -1,7 +1,7 @@
 import React,{useState,useEffect} from 'react';
 import { imageData } from '../utils/imageData';
 import {motion,AnimatePresence} from 'framer-motion'
-// import TryItNow from './buttons/TryItNow';
+import TryItNow from './buttons/TryItNow';
 
 
 //Image Carousel from scratch
@@ -48,15 +48,16 @@ const Hero = () => {
                 initial={{opacity:0}}
                 animate={{opacity:0.8}}
                 transition={{duration:4}}
+                className='fancy'
                 >
-                    INTERACTIVE RALLY EXPERIENCE
+                    INTERACTIVE<span className='glow'> RALLY </span>EXPERIENCE
                 </motion.h1>
                 <motion.p
                 initial={{opacity:0}}
                 animate={{opacity:0.8}}
                 transition={{duration:4}}
-                >Experience breathtaking rally like never <br/> before and from the comfort of your own home.</motion.p>
-                {/* <TryItNow/> */}
+                >Experience breathtaking rally like never <br/> before and from the comfort of your own home</motion.p>
+                <TryItNow/>
             </div>
             <motion.div
             initial={{opacity:0,y:-10}}
