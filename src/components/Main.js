@@ -55,7 +55,7 @@ getCompo('','white')
             onChange={isVisible => {
             getCompo(isVisible&&'yellow','#FFB33F')
             }}
-            
+            partialVisibility
         >
             <Yellow isMobile={isMobile} component={component}/>
         </VisibilitySensor>
