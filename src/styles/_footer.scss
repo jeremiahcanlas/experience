@@ -19,6 +19,7 @@
         align-content: center;
         justify-content: center;
         min-width: 100vw;
+        height: 30vh;
 
         @include md {
             flex-direction: row;
@@ -34,7 +35,7 @@
             justify-content: center;
             text-align: center;
             min-width: 100vw;
-            padding: 0 .5rem;
+            
             
 
             @include md {
@@ -75,13 +76,12 @@
            display: flex;
            justify-content: center;
            align-content: center;
-        //    margin: 3rem auto;
+           margin:auto;
+       
 
 
            @include md {
-            min-width: 30vw;
-            // padding:1rem;
-            // margin-top: 10rem;
+            min-width: 40vw;
            }
         }
 
@@ -163,7 +163,7 @@
 
     .footer-purple{
         background-color: #5E33D1;
-        height: 30vh;
+        height: 35vh;
         min-width:100vw ;
         display: flex;
         text-align: center;
