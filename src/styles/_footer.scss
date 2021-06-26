@@ -17,6 +17,7 @@
         flex-direction: column; //dynamically set
         background-color: #191919;
         align-content: center;
+        justify-content: center;
         min-width: 100vw;
 
         @include md {
@@ -29,18 +30,16 @@
 
         .content {
             display: flex;
-            // position: relative;
             flex-direction: column;
             justify-content: center;
             text-align: center;
-            margin: 10rem auto 0 auto;
+            min-width: 100vw;
             padding: 0 .5rem;
-            width: 90%;
+            
 
             @include md {
                 margin: 0 auto;
-                // margin-left: 6rem;
-                width: 50%;
+                min-width: 50vw;
                 text-align: left;
                 padding-left: 3rem;
 
@@ -74,12 +73,15 @@
 
         .footer-btn {
            display: flex;
-           padding: 0.5rem;
-           margin: 0 auto;
+           justify-content: center;
+           align-content: center;
+        //    margin: 3rem auto;
+
 
            @include md {
-            padding:1rem;
-            margin-top: 10rem;
+            min-width: 30vw;
+            // padding:1rem;
+            // margin-top: 10rem;
            }
         }
 
