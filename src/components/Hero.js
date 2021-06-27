@@ -15,7 +15,7 @@ const Hero = () => {
     useEffect(() => {
         const timer = setTimeout(() => {
             current === length -1?setCurrent(0):setCurrent(current+1)
-        },10000)
+        },5000)
 
         return () => clearTimeout(timer) //this will unmount the timer and wont mess up the timeout
     },[current,length])
@@ -23,20 +23,20 @@ const Hero = () => {
 
     return (
         <section className='hero-container'>
-            
-            {
+                 {
                 imageData.map((slide,index)=> 
                 
                     <AnimatePresence>
                         {index === current && 
                             (<motion.img
                             src={slide.image} 
-                            alt='image' 
+                            alt='image'
+                            key={index+1} 
                             className='image'
                             initial={{opacity:0}}
                             animate={{opacity:1}}
                             exit={{opacity:0}}
-                            transition={{duration:1.5}}
+                            transition={{duration:3}}
                             />)
                         }
                     </AnimatePresence>
@@ -44,6 +44,7 @@ const Hero = () => {
             }
 
             <div className='main'>
+
                 <motion.h1
                 initial={{opacity:0}}
                 animate={{opacity:0.8}}
@@ -69,7 +70,7 @@ const Hero = () => {
                 <i className='fa fa-angle-down'aria-hidden="true"></i>
 
             </motion.div>
-            
+
         </section>
     );
 }

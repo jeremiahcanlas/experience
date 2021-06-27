@@ -18,7 +18,7 @@ const Yellow = ({component:{compo}}) => {
     return (
         <div className='yellow'>
 
-        <video   muted='muted' loop playsInline id="video">
+        <video style={compo === 'yellow'?{display:'block'}:{display:'none'}}  muted='muted' loop playsInline id="video">
         <source src={video} type="video/mp4"/>
         </video>
 

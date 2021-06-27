@@ -5,8 +5,6 @@
     min-width: 100vw;
     position: relative;
     margin: 0;
-    overflow: hidden;
-    background-color: black;
 
 
     @include md {
@@ -16,10 +14,10 @@
         
     .image {
         position: absolute;
-        z-index: 1;
         height: 100vh;
         width: 100vw;
         object-fit: cover;
+        z-index: -999999; //keep this here if you dont want it to flicker between transitions lol
     }   
 
     .main {
@@ -32,7 +30,7 @@
         width: 100vw;
         height: 100vh;
         background-color: rgba(0, 0, 0, 0.6);
-        z-index: 5;
+        
 
         h1{
             font-family: $bold;
