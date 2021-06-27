@@ -59,9 +59,14 @@
         .dropdown {
             z-index: 110;
             list-style-type: none;
+            // display: flex;
+            // flex-direction: column;
+            // justify-content: center;
+            // align-content: center;
             text-align: center;
             margin: auto auto;
             display: block;
+            min-width: 100vw;
             padding: 0;
             
 
@@ -105,6 +110,11 @@
                     color: white;
                     background-position: 0%;
                   }
+            }
+
+            .tryItBtn {
+                margin: 6rem auto 1rem auto;
+                font-family: $font;
             }
         
         }   

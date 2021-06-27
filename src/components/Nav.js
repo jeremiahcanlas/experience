@@ -1,6 +1,7 @@
 import React,{useState,useEffect} from 'react';
 import {motion,AnimateSharedLayout} from 'framer-motion'
 import {Link} from 'react-router-dom'
+import TryItNow from './buttons/TryItNow'
 
 
 
@@ -52,6 +53,18 @@ const Nav = ({component:{compo,color},path}) => {
             },
         hidden: {opacity:0, y:100, transition:{
             duration:0.3
+        }}
+    }
+
+    const navBtn = {
+        visible: {
+            opacity:1,
+             transition:{
+                 duration:2
+             }
+            },
+        hidden: {opacity:0, transition:{
+            duration:0.5
         }}
     }
    
@@ -119,10 +132,18 @@ const Nav = ({component:{compo,color},path}) => {
                                 </motion.li>
                                     ) 
                                 }
+                                <motion.li
+                               variants={navBtn}
+                               key={4}
+                                >
+                                    <TryItNow/>
+                                </motion.li>
                             </motion.ul>
 
 
                     </AnimateSharedLayout>
+
+        
 
                     </motion.div>
 
