@@ -14,29 +14,42 @@
 @import './price';
 
 
+// *{
+//     border: 2px solid red;
+// }
+html{
 
-// html{
-//     @include md {
-//         scroll-snap-type: y mandatory;
-//         -webkit-overflow-scrolling: touch;
-//     }
+ overflow-x: hidden;
+//  overflow-y:auto;
 
+    @include md {
+        scroll-snap-type: y mandatory;
+        -webkit-overflow-scrolling: touch;
+    }
+
+}
+
+// html, body {
+//     max-height: 100%;
+//     max-width: 100%;
+//     // overflow-x: hidden;
 // }
 
-html,body {
-    width: 100vw;
-    height: 100vh;
+body {
+    width: 100%;
+    height: 100%;
     margin: 0px;
     padding: 0px;
-    overflow-x:hidden; 
+    position: relative;
     overflow-y: auto;
   
 
-    @include md {
-        overflow-x:unset;
-        overflow-y:unset;
-        scroll-snap-type: y mandatory;
-        -webkit-overflow-scrolling: touch;
+  
+
+    .app-main {
+        position: relative;
+        // border: 3px solid red;
+  
     }
 
     a,a:visited,a:hover,a:focus,a:active {

@@ -1,6 +1,6 @@
 import React,{Fragment} from 'react';
 import Black from './Black'
-import TryItNow from './buttons/TryItNow';
+import Button from './buttons/Button';
 
 const Footer = ({path}) => {
     const year = new Date();
@@ -18,7 +18,7 @@ const Footer = ({path}) => {
                             <p>Purchase and download the app</p>
                         </div>
                         <div className='footer-btn'>
-                            <TryItNow/>                    
+                            <Button name={'try it now'}/>                    
                         </div>
                     </Fragment>
                 )

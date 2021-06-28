@@ -1,23 +1,23 @@
 import React from 'react';
 import {motion} from 'framer-motion'
-import {Link} from 'react-router-dom'
 
-const TryItNow = () => {
+const TryItNow = ({name,style}) => {
+
+    
 
 
     return (
       
-            <Link to='/price'>
-                <div className='tryItBtn'>
+                <div style={style} className='tryItBtn'>
                 <motion.p
                 initial={{opacity:0}}
                 animate={{opacity:1}}
                 transition={{type:'tween', duration:0.5}}
             >
-                TRY IT NOW
+                {name}
             </motion.p> 
                 </div>  
-            </Link>
+        
       
 
      

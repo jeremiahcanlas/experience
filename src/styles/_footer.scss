@@ -3,8 +3,8 @@
     scroll-snap-align: start;
     display: flex;
     flex-direction: column;
-    min-width: 100vw;
-    min-height: 100vh;
+    max-width: 100%;
+    // min-height: 100vh;
 
     @include md {
         scroll-snap-align: start;
@@ -13,13 +13,13 @@
 
     .footer-black{
         display: flex;
-        overflow: hidden;
+        // overflow: hidden;
         flex-direction: column; //dynamically set
         background-color: #191919;
         align-content: center;
         justify-content: center;
-        min-width: 100vw;
-        min-height: 50vh;
+        // min-width: 100vw;
+        height: 40vh;
 
         @include md {
             flex-direction: row;
@@ -35,7 +35,8 @@
             justify-content: center;
             text-align: center;
             margin-top: 5rem;
-            min-width: 100vw;
+            
+           
             
             
 
@@ -62,6 +63,7 @@
                 font-size: 1.2rem;
                 color: white;
                 letter-spacing: 4.5px;
+                font-size: 1rem;
                 margin: 0;
                 font-family: $font;
 
@@ -163,8 +165,8 @@
 
     .footer-purple{
         background-color: #5E33D1;
-        min-height: 50vh;
-        min-width:100vw ;
+        // min-height: 50vh;
+        // min-width:100vw ;
         display: flex;
         text-align: center;
         flex-direction: column;

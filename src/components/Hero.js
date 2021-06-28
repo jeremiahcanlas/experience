@@ -1,7 +1,8 @@
 import React,{useState,useEffect} from 'react';
 import { imageData } from '../utils/imageData';
 import {motion,AnimatePresence} from 'framer-motion'
-import TryItNow from './buttons/TryItNow';
+import Button from './buttons/Button';
+import {Link} from 'react-router-dom'
 
 
 //Image Carousel from scratch
@@ -15,7 +16,7 @@ const Hero = () => {
     useEffect(() => {
         const timer = setTimeout(() => {
             current === length -1?setCurrent(0):setCurrent(current+1)
-        },5000)
+        },120000)
 
         return () => clearTimeout(timer) //this will unmount the timer and wont mess up the timeout
     },[current,length])
@@ -26,17 +27,17 @@ const Hero = () => {
                  {
                 imageData.map((slide,index)=> 
                 
-                    <AnimatePresence>
+                    <AnimatePresence >
                         {index === current && 
                             (<motion.img
+                            key={index*2} 
                             src={slide.image} 
                             alt='image'
-                            key={index+1} 
                             className='image'
                             initial={{opacity:0}}
                             animate={{opacity:1}}
                             exit={{opacity:0}}
-                            transition={{duration:1.5}}
+                            transition={{duration:0.7}}
                             />)
                         }
                     </AnimatePresence>
@@ -58,7 +59,9 @@ const Hero = () => {
                 animate={{opacity:0.8}}
                 transition={{duration:4}}
                 >Experience breathtaking rally like never <br/> before and from the comfort of your own home</motion.p>
-                <TryItNow/>
+                <Link to='/price'>
+                    <Button name={'Try It Now'}/>
+                </Link>
             </div>
             <motion.div
             initial={{opacity:0,y:-10}}

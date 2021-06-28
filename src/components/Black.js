@@ -27,8 +27,8 @@ const Black = () => {
             <div className="black-content">
                 <div className="perks">
                     {
-                        perks.map(perk => 
-                            <div className='perk'>
+                        perks.map((perk,index) => 
+                            <div className='perk' key={index}>
                                 <div className="border" style={{borderColor:`${perk.color}`}}></div>
                                 <h3 style={{color:`${perk.color}`}}>{perk.title}</h3>
                                 <p>{perk.content}</p>

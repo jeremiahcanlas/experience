@@ -2,7 +2,7 @@
 .hero-container {
     display: flex;
     height: 100vh;
-    min-width: 100vw;
+    width: 100%;
     position: relative;
     margin: 0;
 
@@ -15,9 +15,9 @@
     .image {
         position: absolute;
         height: 100vh;
-        width: 100vw;
+        width: 100%;
         object-fit: cover;
-        z-index: -999999; //keep this here if you dont want it to flicker between transitions lol
+        z-index: -1; 
     }   
 
     .main {
@@ -27,8 +27,8 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        width: 100vw;
-        height: 100vh;
+        width: 100%;
+        height: 100%;
         background-color: rgba(0, 0, 0, 0.6);
         
 
@@ -70,14 +70,14 @@
 
     .scroll {
         position: absolute;
-        z-index: 999;
-        width: 100vw;
+        z-index: 1;
+        width: 100%;
         bottom: 12vh;
         font-family: $font;
         text-align: center;
         color: whitesmoke;
         margin-bottom: 1rem;
-        opacity: 0.5;
+        opacity: 0.7;
         text-shadow: 0px 0px 3px white;
 
         @include md {

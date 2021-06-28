@@ -1,7 +1,6 @@
 import React,{useState,useEffect} from 'react';
 import {motion,AnimateSharedLayout} from 'framer-motion'
 import {Link} from 'react-router-dom'
-import TryItNow from './buttons/TryItNow'
 
 
 
@@ -56,17 +55,6 @@ const Nav = ({component:{compo,color},path}) => {
         }}
     }
 
-    const navBtn = {
-        visible: {
-            opacity:1,
-             transition:{
-                 duration:2
-             }
-            },
-        hidden: {opacity:0, transition:{
-            duration:0.5
-        }}
-    }
    
     return (
             
@@ -75,7 +63,7 @@ const Nav = ({component:{compo,color},path}) => {
                    
 
                     <div className='nav-brand'>
-                        <Link to='/'>
+                        <Link to='/' replace >
                             <motion.span
                                 initial={{opacity:0}}
                                 animate={{opacity:1}}
@@ -120,7 +108,7 @@ const Nav = ({component:{compo,color},path}) => {
                                 variants={navItem}
                                 key={index}
                                 >
-                                    <Link to={item.path} onClick={e => toggleExpand(false)}>
+                                    <Link to={item.path} onClick={e => toggleExpand(false)} replace>
 
                                         <motion.span
                                         key={index}
@@ -132,12 +120,6 @@ const Nav = ({component:{compo,color},path}) => {
                                 </motion.li>
                                     ) 
                                 }
-                                <motion.li
-                               variants={navBtn}
-                               key={4}
-                                >
-                                    <TryItNow/>
-                                </motion.li>
                             </motion.ul>
 
 
