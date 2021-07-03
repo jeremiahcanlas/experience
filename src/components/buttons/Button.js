@@ -11,7 +11,7 @@ import Fade from 'react-reveal/Fade';
 
 const Button = ({name,style,duration,delay,bottom,left,right,top}) => 
 
-    <Fade ssrReveal bottom={bottom} left={left} right={right} top={top} duration={duration} delay={delay}>
+    <Fade  bottom={bottom} left={left} right={right} top={top} duration={duration} delay={delay}>
         <div 
         className='button'
         style={style}

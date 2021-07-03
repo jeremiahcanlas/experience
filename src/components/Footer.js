@@ -23,7 +23,7 @@ const Footer = ({path}) => {
                             </Fade>
                         </div>
                         <div className='footer-btn'>
-                            <Button name={'try it now'}  duration={1000}/>                    
+                            <Button name={'try it now'}  duration={1000} delay={1500}/>                    
                         </div>
                     </Fragment>
                 )
