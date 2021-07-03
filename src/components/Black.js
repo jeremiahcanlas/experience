@@ -1,4 +1,8 @@
 import React from 'react';
+import Fade from 'react-reveal/Fade';
+// import Pulse from 'react-reveal/Pulse';
+// import Slide from 'react-reveal/Slide';
+// import Bounce from 'react-reveal/Bounce';
 
 const Black = ({footer}) => {
 
@@ -25,19 +29,23 @@ const Black = ({footer}) => {
 
 
     return (
-        <div className='black' style={{scrollSnapAlign:footer?'none':'start'}}>
+        <div id='allPerks'className='black' style={{scrollSnapAlign:footer?'none':'start'}}>
             <div className="black-content">
-                <div className="perks">
-                    {
-                        perks.map((perk,index) => 
-                            <div className='perk' key={index}>
-                                <div className="border" style={{borderColor:`${perk.color}`}}></div>
-                                <h3 style={{color:`${perk.color}`}}>{perk.title}</h3>
-                                <p>{perk.content}</p>
-                            </div>
-                        )
-                    }
-                </div>
+                
+                    <div className="perks">
+                        {
+                            perks.map((perk,index) => 
+                            <Fade bottom delay={(index+1)*90} duration={800} key={index+2}>
+                                <div className='perk'>
+                                    <div className="border" style={{borderColor:`${perk.color}`}}></div>
+                                    <h3 style={{color:`${perk.color}`}}>{perk.title}</h3>
+                                    <p>{perk.content}</p>
+                                </div>
+                            </Fade>
+                            )
+                        }
+                    </div> 
+              
             </div>
         </div>
     );

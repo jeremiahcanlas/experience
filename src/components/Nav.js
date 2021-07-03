@@ -3,18 +3,18 @@ import {motion,AnimateSharedLayout} from 'framer-motion'
 import {Link} from 'react-router-dom'
 
 
-
+//this relies heavy on framer motion.
 
 const Nav = ({component:{compo,color},path}) => {
 
     const navItems = [
         {
-            item:'What is it',
+            item:'home',
             path:'/'
         },
         {
             item:'Perks',
-            path:'/'
+            path:'/perks'
         },
         {
             item:'Pricing',
@@ -131,16 +131,10 @@ const Nav = ({component:{compo,color},path}) => {
                                     ) 
                                 }
                             </motion.ul>
-
-
                     </AnimateSharedLayout>
-
-        
-
                     </motion.div>
-
-
             </AnimateSharedLayout>
+
 
             </div>
         

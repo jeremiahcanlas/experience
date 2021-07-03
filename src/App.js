@@ -5,6 +5,7 @@ import Footer from './components/Footer'
 import Main from './components/Main'
 import Price from './components/Price'
 import Payment from './components/Payment'
+import Black from './components/Black'
 
 import { HashRouter as Router, Route, Switch } from "react-router-dom";
 import ScrollToTop from './components/ScrollToTop';
@@ -18,8 +19,8 @@ function App() {
 
   const {width}  = useWindowDimensions()
 
-  //this will check if viewport width is less than 688px
-  const isMobile = width < 688;
+  //this will check if viewport width is less than 730px
+  const isMobile = width < 730;
 
   //sets which components are on viewport
   const[component,setComponent]=useState('')
@@ -46,7 +47,6 @@ function App() {
     setTier(tier)
   }
 
-
   
   return (
     
@@ -59,6 +59,7 @@ function App() {
         <Switch>
           <Route path='/' exact  render={() => <Main getCompo={getCompo}  component={component} isMobile={isMobile} getPath={getPath}/>}/>
           <Route path='/price'  render={() => <Price getPath={getPath} getCompo={getCompo} isMobile={isMobile} getTier={getTier}/>}/>
+          <Route path='/perks'  render={() => <Black/>}/>
           <Route path='/checkout'  render={() => <Payment tier={tier} getPath={getPath} getCompo={getCompo} getTier={getTier}/>} />
         </Switch>
        

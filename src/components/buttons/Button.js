@@ -1,27 +1,23 @@
 import React from 'react';
-import {motion} from 'framer-motion'
+import Fade from 'react-reveal/Fade';
+// import Pulse from 'react-reveal/Pulse';
+// import Slide from 'react-reveal/Slide';
+// import Bounce from 'react-reveal/Bounce';
 
-const TryItNow = ({name,style}) => {
 
-    
+//this takes name and style for the button
+// also takes props for react-reveal
 
 
-    return (
-      
-                <div style={style} className='tryItBtn'>
-                <motion.p
-                initial={{opacity:0}}
-                animate={{opacity:1}}
-                transition={{type:'tween', duration:0.5}}
-            >
-                {name}
-            </motion.p> 
-                </div>  
-        
-      
+const Button = ({name,style,duration,delay,bottom,left,right,top}) => 
 
-     
-    );
-}
+    <Fade ssrReveal bottom={bottom} left={left} right={right} top={top} duration={duration} delay={delay}>
+        <div 
+        className='button'
+        style={style}
+        >
+            <p>{name}</p>
+        </div>
+    </Fade>
 
-export default TryItNow;
+export default Button;

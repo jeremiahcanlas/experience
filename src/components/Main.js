@@ -76,7 +76,7 @@ getCompo('','white')
             }}
             
         >
-            <Blue/>
+            <Blue isMobile={isMobile}/>
         </VisibilitySensor>
       </div>
     );

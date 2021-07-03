@@ -58,7 +58,7 @@ const Payment = ({tier,getTier,getPath,getCompo}) => {
 
                             <span style={{display:'inline-block'}}>
                                 <label htmlFor='name' style={{display:'block'}}>FULL NAME</label>
-                                <input type="text" name="name" id="name"/>
+                                <input type="text" name="name" id="name" />
                             </span>
 
                             <span style={{display:'inline-block'}}>
@@ -75,7 +75,7 @@ const Payment = ({tier,getTier,getPath,getCompo}) => {
 
                                 <span style={{display:'inline-block'}}>
                                     <label htmlFor='postal' style={{display:'block'}}>POSTAL CODE</label>
-                                    <input type="text" name="postal" id="postal"/>
+                                    <input type="text" name="postal" id="postal" placeholder=' A1A 1A1'/>
                                 </span>
 
                             </div>
@@ -102,11 +102,11 @@ const Payment = ({tier,getTier,getPath,getCompo}) => {
                             <div className='split'>
                                 <span style={{display:'inline-block'}}>
                                     <label htmlFor='expiry-month' style={{display:'block'}}>EXP MONTH</label>
-                                    <input type="text" name="expiry-month" id="expiry-month"/>
+                                    <input type="text" name="expiry-month" id="expiry-month" placeholder=' MM/YY'/>
                                 </span>
                                 <span style={{display:'inline-block'}}>
                                     <label htmlFor='expiry-year' style={{display:'block'}}>EXP YEAR</label>
-                                    <input type="text" name="expiry-year" id="expiry-year"/>
+                                    <input type="text" name="expiry-year" id="expiry-year" placeholder=' MM/YY'/>
                                 </span>
                             </div>
                             

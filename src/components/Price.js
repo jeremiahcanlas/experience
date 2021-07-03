@@ -1,6 +1,9 @@
 import React,{useEffect} from 'react';
 import {useLocation,Link} from 'react-router-dom'
 import Button from '../components/buttons/Button'
+import {plans} from '../utils/plansData'
+import Fade from 'react-reveal/Fade';
+
 
 const Price = ({getPath,getTier,getCompo,isMobile}) => {
 const {pathname} = useLocation()
@@ -15,89 +18,22 @@ useEffect(() => {
 },[])
 
 
-
-
-
-
-const plans = [
-    {
-        tier:'Basic',
-        duration:'Monthly',
-        price:9.99,
-        summary:'SD 720P + 1 device',
-        recommended:false,
-        features:[
-            'Very Good',
-            'Amazing',
-            'Perfect Job',
-            'Love this',
-            'It\'s so good',
-            'Features'
-        ],
-        color:'#D24848'
-    },
-    {
-        tier:'Advanced',
-        duration:'Monthly',
-        price:12.99,
-        summary:'HD 1080P + 3 devices',
-        recommended:true,
-        features:[
-            'Very very Good',
-            'Even Amazing',
-            'Perfect Job',
-            'Love this more',
-            'It\'s so so good',
-            'More Features'
-        ],
-        color:'#FFB33F'
-    },
-    {
-        tier:'Pro',
-        duration:'Monthly',
-        price:15.99,
-        summary:'4K UHD + 5 devices',
-        recommended:false,
-        features:[
-            'Very very Good',
-            'Even Amazing',
-            'Perfect Job',
-            'Love this more',
-            'It\'s so so good',
-            'More Features'
-        ],
-        color:'#1FE1E9'
-    }
-]
-
-
-
-
-// const next = () => {
-//     setCurrent(current === plans.length - 1?0:current+1)
-// }
-
-// const prev = () => setCurrent(current === 0? plans.length - 1: current -1 )
-
-
     return (
         <div className='price'>
             <div className='main'>
-                <h1 className='fancy'>PRICING</h1>
-                <p>Choose from three subscription based payment models.</p>
+                <Fade duration={800} delay ={500}>
+                    <h1 className='fancy'>PRICING</h1>
+                </Fade>
+                <Fade duration={2000} delay ={1000}>
+                    <p>Choose from three subscription based payment models.</p>
+                </Fade>
             </div>
 
-            {/* {isMobile&&
-            <i className="fa fa-arrow-left left-arrow" aria-hidden="true" onClick={e => next()} ></i>
-            }
-            {
-                isMobile&&
-                <i className="fa fa-arrow-right right-arrow" aria-hidden="true" onClick={e => prev()}></i>            
-            } */}
 
             <div className='plans'>
                 {plans.map((plan,index) => (
-                    <div className='plan' key={index} style={{border:`3px solid ${plan.recommended?plan.color:'white'}`}}>
+                    <Fade bottom duration={1500} delay={(index+1)*90} key={index+2}>
+                        <div className='plan' key={index} style={{border:`3px solid ${plan.recommended?plan.color:'white'}`}}>
                         {plan.recommended && <p style={{margin:'none'}}>MOST POPULAR ✨</p>}
                         <h1 style={{WebkitTextStroke:`0.04em ${plan.color}`}} className='fancy'>{plan.tier.toUpperCase()}</h1>
                         <div style={{borderColor:plan.color}} className='border'></div>
@@ -107,9 +43,11 @@ const plans = [
                         <p>{plan.summary}</p>
 
                         <Link to ='/checkout' onClick={e => getTier(`${plan.tier.toLocaleLowerCase()}`) } >
-                            <Button name={'select'} style={{color:plan.color,borderColor:plan.color,margin:'2rem auto 0 auto'}} />
+                            <Button name={'select'} style={{color:plan.color,borderColor:plan.color,margin:'2rem auto 0 auto'}} duration={600} />
                         </Link>
                     </div>
+
+                    </Fade>
 
                 ))}
             </div>

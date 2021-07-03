@@ -49,6 +49,7 @@
         display: flex;
         justify-content: space-evenly;
         flex-direction: column;
+        justify-content: center;
         min-width: 100vw;
 
         @include lg {
@@ -60,7 +61,8 @@
             // border: 3px solid whitesmoke;
             border-radius: 0.5rem;
             min-width: 18em;
-            padding: 4vw;
+            min-height: 25em;
+            padding: 5vw;
             margin: 1rem auto;
 
             @include lg {
@@ -74,6 +76,7 @@
                     font-size: 2rem;
                     letter-spacing: 4px;
                     font-family: $bold;
+                    margin-top: 2em;
                 }
 
                 &:last-of-type{
@@ -120,22 +123,24 @@
             
             }
 
-            .planBtn {
-                background-color: white;
-                text-align: center;
-                padding: 0.8rem;
-                width: 8rem;
-                color: white;
-                border-radius: 8rem;
-                margin-right: auto;
-                cursor: pointer;
-                letter-spacing: normal!important;
-                margin-top: 1.5rem;
+            // .button{
+            //     margin-top: 2em!important;
+            // }
+            // .planBtn {
+            //     background-color: white;
+            //     text-align: center;
+            //     padding: 0.8rem;
+            //     width: 8rem;
+            //     color: white;
+            //     border-radius: 8rem;
+            //     margin-right: auto;
+            //     cursor: pointer;
+            //     letter-spacing: normal!important;
 
-                @include md {
-                    margin: 2rem auto;
-                }
-            }
+            //     @include md {
+            //         margin: 2rem auto;
+            //     }
+            // }
         }
     }
 

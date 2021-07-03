@@ -82,6 +82,13 @@
            @include md {
             min-width: 40vw;
            }
+
+           .button {
+               
+            @include sm {
+                width: 100%;
+            }
+           }
         }
 
         //perks content in footer
