@@ -5,10 +5,10 @@
     width: 100%;
 
  
-    @include md {
-        scroll-snap-align: start;
+    // @include md {
+    //     scroll-snap-align: start;
            
-    }
+    // }
 
     #video {
         display: block;
@@ -35,7 +35,7 @@
         max-width: 100%;
         z-index: 1;
         background-color: rgba(0,0,0,0.7);
-        // padding: 0 1rem;
+        padding: 0 1rem;
 
         @include md {
             padding: 0 5rem;

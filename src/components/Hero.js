@@ -10,7 +10,7 @@ const Hero = () => {
 
     const length = imageData.length
     const [current,setCurrent] = useState(Math.floor(Math.random() * length))
-  
+    
 
     //use this to automate a carousel
     useEffect(() => {

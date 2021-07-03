@@ -1,8 +1,7 @@
 
 .payment {
-    scroll-snap-align: start;
-    // height: 100vh;
-    width: 65%;
+    // scroll-snap-align: start;
+    width: 80%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -12,17 +11,20 @@
 
     @include md {
         height: 100vh;
-        scroll-snap-align: start;
     }
 
     h1{
-        letter-spacing: 7.4px;
+        letter-spacing: 7px;
         margin-bottom: 3rem;
+        font-family: $bold;
+        -webkit-text-stroke: 0.06em black;
+
     }
     
 
     .payment-form {
         width: 100%;
+        font-family: $font;
 
 
         .tiers{
@@ -54,10 +56,20 @@
                     @include md {
                         margin: 0 1rem;
                     }
-    
-                    i{
+
+                    i {
                         margin-right: 0.2rem;
+                        &::before{
+                            max-width: 0.5rem;
+                        }
                     }
+
+                    input {
+                        margin: 0 0.5rem 0 0;
+                        max-width: 1rem;
+                    }
+    
+
                 }
 
             }
@@ -104,7 +116,7 @@
 
                         &:focus{
                             outline: none;
-                            border-bottom: 5px solid #2F1FE9;
+                            border-bottom: 3px solid #2F1FE9;
                         }
                     }
 
@@ -116,7 +128,12 @@
                 }
 
                 .credit{
-                    margin-left: auto;
+
+                    @include md {
+                        margin-left: auto;
+
+                    }
+
                 }
 
                 // two input in a div that has row flex**
@@ -166,19 +183,7 @@
         }
 
         .payment-btn{
-            display: inline-block;
-
-            
-            p{   
-                position: relative;        
-                padding: 1rem 5rem ;
-                right: 3rem;
-                bottom: 2rem;
-
-                &::after{
-                    padding:6px 20px;
-                }
-            }
+            margin-top: 2rem;
         }
     }
 }

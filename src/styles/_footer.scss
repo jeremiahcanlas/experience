@@ -1,14 +1,12 @@
 
 .footer {
-    scroll-snap-align: start;
+    // scroll-snap-align: start;
     display: flex;
     flex-direction: column;
     max-width: 100%;
-    // min-height: 100vh;
+    min-height: 100%;
 
-    @include md {
-        scroll-snap-align: start;
-    }
+
 
 
     .footer-black{
@@ -19,11 +17,10 @@
         align-content: center;
         justify-content: center;
         // min-width: 100vw;
-        height: 40vh;
+        min-height: 50vh;
 
         @include md {
-            flex-direction: row;
-           
+            flex-direction: row;  
         }
 
 
@@ -93,6 +90,7 @@
         .footer-perks{
             background-color: #D34848;
             padding: 3rem 1rem;
+            height: 50vh;
             z-index: 999;
 
             @include md {
@@ -170,6 +168,7 @@
         display: flex;
         text-align: center;
         flex-direction: column;
+        height: 60%;
 
         div{
             color: white;

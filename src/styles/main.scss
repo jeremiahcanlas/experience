@@ -22,18 +22,14 @@ html{
  overflow-x: hidden;
 //  overflow-y:auto;
 
-    @include md {
-        scroll-snap-type: y mandatory;
-        -webkit-overflow-scrolling: touch;
-    }
+    // @include md {
+        
+    //     scroll-snap-type: y mandatory;
+    //     -webkit-overflow-scrolling: touch;
+    // }
 
 }
 
-// html, body {
-//     max-height: 100%;
-//     max-width: 100%;
-//     // overflow-x: hidden;
-// }
 
 body {
     width: 100%;
@@ -42,6 +38,8 @@ body {
     padding: 0px;
     position: relative;
     overflow-y: auto;
+    
+
   
 
   
@@ -49,6 +47,7 @@ body {
     .app-main {
         position: relative;
         // border: 3px solid red;
+
   
     }
 

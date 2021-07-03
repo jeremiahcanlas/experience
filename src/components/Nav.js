@@ -28,6 +28,7 @@ const Nav = ({component:{compo,color},path}) => {
         toggleExpand(!compo&&false)
     },[compo])
 
+
     const list = {
         visible:{
         display:'block',
@@ -55,6 +56,13 @@ const Nav = ({component:{compo,color},path}) => {
         }}
     }
 
+
+    //checkout page exclusive =)
+    const navStyle = {
+        color:expand?'white':compo === 'checkout'&&'black',
+        opacity:0.8
+    }
+
    
     return (
             
@@ -69,6 +77,7 @@ const Nav = ({component:{compo,color},path}) => {
                                 animate={{opacity:1}}
                                 transition={{duration:1,type:'tween'}}
                                 onClick={e => toggleExpand(false)}
+                                style = {navStyle}
                             >
                                 EXP.RALLY
                             </motion.span>
@@ -80,6 +89,7 @@ const Nav = ({component:{compo,color},path}) => {
                     onClick={e => toggleExpand(!expand)}
                     transition={{duration:0.2,type:'tween'}}
                     whileHover={{scale:1.1}}
+                    style = {navStyle}
                     >
                         <i className={expand?'fa fa-times':'fa fa-bars'} aria-hidden="true"></i>
                     </motion.div>

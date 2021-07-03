@@ -1,5 +1,6 @@
 import React,{useEffect} from 'react';
 import {useLocation} from 'react-router-dom'
+import Button from './buttons/Button'
 
 
 
@@ -35,7 +36,7 @@ const Payment = ({tier,getTier,getPath,getCompo}) => {
     return (
         <div className='payment'>
          <div className='payment-form'>
-             <h1>PAYMENT</h1>
+             <h1 className='fancy'>PAYMENT</h1>
          <form action="submit">
                     <div className='tiers'>
                         <p>1. Select your plan</p>
@@ -122,11 +123,7 @@ const Payment = ({tier,getTier,getPath,getCompo}) => {
 
                     <p className='terms'>By continuing, I acknowledge that I’ve read and agree to the <span>Terms of Service</span> & <span>Privacy Policy</span>.</p>
                     <div className='payment-btn'>
-                    <p
-                    className='btn-mix-noborder' 
-                    data-text='Download'
-                    style={{height:'5px'}} 
-                    >          </p>
+                        <Button name='Download' style={{color:'black',border:'1px solid black'}}/>
                     </div>
                 </form>
 

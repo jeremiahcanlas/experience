@@ -6,11 +6,11 @@ const Footer = ({path}) => {
     const year = new Date();
 
     return (
-        <div className='footer' style={{height:path ==='/checkout'&&'30vh'}}>
+        <div className='footer' style={{scrollSnapAlign:path === '/price'&&'none'}} >
             <div className='footer-black' style={{display:path === '/checkout'&&'none'}}>
             {
                 path === '/price'?(
-                    <Black />
+                    <Black footer />
                 ):(
                     <Fragment>
                         <div className='content'>

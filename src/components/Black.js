@@ -1,6 +1,8 @@
 import React from 'react';
 
-const Black = () => {
+const Black = ({footer}) => {
+
+    
 
     const perks = [
         {
@@ -23,7 +25,7 @@ const Black = () => {
 
 
     return (
-        <div className='black'>
+        <div className='black' style={{scrollSnapAlign:footer?'none':'start'}}>
             <div className="black-content">
                 <div className="perks">
                     {

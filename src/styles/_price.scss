@@ -1,34 +1,32 @@
 
 .price {
-    scroll-snap-align:end;
     background-color: #191919;
     color: white;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-content: center;
-    justify-content: center;
+    // align-content: center;
     height: 100%;
     width: 100%;
     padding: 5rem 0;
    
 
-    @include md {
-        // scroll-snap-align: start;
+    @include lg {
         height: 100vh;
+        padding: 1rem 0 5rem 0;
     }
 
     .main{
         padding: 0 1rem;
-        margin: auto;
+        margin: 0 auto 2rem auto;
        
 
-        @include md {
-            margin-left: 13rem;
-            margin-right: 10rem;
-            margin-top: 3rem;
+        // @include lg {
+        //     margin-left: 13rem;
+        //     margin-right: 10rem;
+        //     // margin-top: 3rem;
     
-        }
+        // }
 
         h1{
             letter-spacing: 7.4px;
@@ -53,19 +51,19 @@
         flex-direction: column;
         min-width: 100vw;
 
-        @include sm {
+        @include lg {
             flex-direction: row;
         }
 
         .plan{
            
-            border: 3px solid whitesmoke;
+            // border: 3px solid whitesmoke;
             border-radius: 0.5rem;
             min-width: 18em;
             padding: 4vw;
             margin: 1rem auto;
 
-            @include sm {
+            @include lg {
                 margin: 0 1.5rem;
             }
 
@@ -105,15 +103,21 @@
                 margin-right: 0.5rem;
             }
 
-            p{
-                letter-spacing: 4.7px;
-                font-size: 1rem;
-                margin: 0.5rem 0;
+            p{  
+                margin: 0;
                 font-family: $font;
 
-                @include md {
-                    font-size: 1.3rem;
+
+                &:last-of-type{
+                    letter-spacing: 4.7px;
+                    font-size: 1rem;
+                    margin: 0.5rem 0;
+    
+                    @include md {
+                        font-size: 1.3rem;
+                    }
                 }
+            
             }
 
             .planBtn {

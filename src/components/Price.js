@@ -71,6 +71,8 @@ const plans = [
 ]
 
 
+
+
 // const next = () => {
 //     setCurrent(current === plans.length - 1?0:current+1)
 // }
@@ -95,35 +97,8 @@ const plans = [
 
             <div className='plans'>
                 {plans.map((plan,index) => (
-
-                    // isMobile? 
-                    
-                    //     index===current &&
-
-                    //     (
-                    //         <motion.div
-                    //          className='plan'
-                    //          initial={{opacity:0}}
-                    //          animate={{opacity:1}}
-                    //          key={index}
-                    //          >
-                    //             <h1 style={{color:plan.color}}>{plan.tier.toUpperCase()}</h1>
-                    //             <div style={{borderColor:plan.color}} className='border'></div>
-                    //             <h2 style={{color:plan.color}}>{plan.duration.toUpperCase()}</h2>
-                    //             <h1 style={{color:plan.color}}>${plan.price}</h1>
-                    //             {plan.features.map((feature,index) => 
-                    //             <p key={index}><i className='fa fa-music'/> {feature}</p>
-                    //             )}
-                    //             <Link to='/checkout'>
-                    //             <p style={{backgroundColor:plan.color}} onClick={e => getTier(`${plan.tier.toLocaleLowerCase()}`) } className='planBtn'>SELECT</p>
-                    //             </Link>
-                    //         </motion.div>
-                    //     )
-                    
-                    // :
-                    // if not mobile
-                    <div className='plan' key={index}>
-                        {plan.recommended && <p>Most popular</p>}
+                    <div className='plan' key={index} style={{border:`3px solid ${plan.recommended?plan.color:'white'}`}}>
+                        {plan.recommended && <p style={{margin:'none'}}>MOST POPULAR ✨</p>}
                         <h1 style={{WebkitTextStroke:`0.04em ${plan.color}`}} className='fancy'>{plan.tier.toUpperCase()}</h1>
                         <div style={{borderColor:plan.color}} className='border'></div>
                         <h2 style={{color:plan.color}}>{plan.duration.toUpperCase()}</h2>
