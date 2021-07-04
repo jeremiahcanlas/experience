@@ -1,132 +1,114 @@
+.nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  height: 8vh;
+  z-index: 2;
+  position: fixed;
 
-.nav{
+  .hamburger {
+    z-index: 3;
+    color: white;
+    margin: 1.5rem 2rem;
+    cursor: pointer;
+
+    i {
+      &::before {
+        font-size: 2rem;
+
+        @include md {
+          font-size: 2.1rem;
+        }
+      }
+    }
+  }
+
+  .nav-brand {
+    letter-spacing: 6px;
+    font-family: $logo;
+    cursor: point;
+    margin: 1rem 2rem;
+    opacity: 0.8;
+    text-decoration: none !important;
+
+    span {
+      text-decoration: none;
+      color: white;
+      font-size: 2rem;
+    }
+  }
+
+  .nav-cover {
+    background: black;
+    position: absolute;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
+    align-content: center;
+    top: 0;
+    right: 0;
+    z-index: -10;
+    opacity: 1;
     width: 100%;
-    height: 8vh;
-    z-index: 2;
-    position:fixed;
+    height: 100vh;
 
+    .dropdown {
+      z-index: 110;
+      list-style-type: none;
+      // display: flex;
+      // flex-direction: column;
+      // justify-content: center;
+      // align-content: center;
+      text-align: center;
+      margin: auto auto;
+      display: block;
+      width: 100%;
+      padding: 0;
 
-    .hamburger {
-        z-index: 3;
-        color: white;
-        margin: 1.5rem 2rem;
-        cursor: pointer;
-        
-        i{
-            
-            &::before {
-                font-size: 2rem;
+      .nav-item {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        letter-spacing: 4.7px;
+        font-family: $bold;
+        z-index: 999;
 
-                @include md {
-                    font-size: 2.1rem;
-                }
-            }
-            
+        a {
+          margin: 0;
+          font-size: 3rem;
+          text-decoration: none;
+          -webkit-text-stroke: 0.02em white;
+          color: transparent;
+          cursor: pointer;
+          background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-image: linear-gradient(
+            to right,
+            white,
+            white 50%,
+            transparent 50%
+          );
+          background-size: 200% 100%;
+          background-position: 100%;
+          transition: all 0.5s cubic-bezier(0, 0, 0.23, 1);
+
+          &::after {
+            -webkit-text-stroke: 0px;
+            -webkit-text-fill-color: transparent;
+            transform: translate(-40px, 8px);
+            letter-spacing: 2px;
+          }
         }
-    }
 
-    .nav-brand {
-        letter-spacing: 6px;
-        font-family: $logo;
-        cursor: point;
-        margin: 1rem 2rem;
-        opacity: 0.8;
-        text-decoration: none!important;
-
-
-        span{
-            text-decoration: none;
-            color: white;
-            font-size: 2rem;
+        a:hover {
+          color: white;
+          background-position: 0%;
         }
+      }
+
+      .tryItBtn {
+        margin: 6rem auto 1rem auto;
+        font-family: $font;
+      }
     }
-
-    .nav-cover {
-        background: black;
-        position: absolute;
-        display: flex;
-        justify-content: center;
-        align-content: center;
-        top: 0;
-        right: 0;
-        z-index: -10;
-        opacity: 1;
-        width:100%;
-        height: 100vh;
-
-        .dropdown {
-            z-index: 110;
-            list-style-type: none;
-            // display: flex;
-            // flex-direction: column;
-            // justify-content: center;
-            // align-content: center;
-            text-align: center;
-            margin: auto auto;
-            display: block;
-            width: 100%;
-            padding: 0;
-            
-
-    
-            .nav-item{
-                font-size: 3rem;
-                margin-bottom: 1rem;
-                letter-spacing: 4.7px;
-                font-family: $bold;
-                z-index: 999;
-    
-              
-                a{
-                    margin: 0;
-                    font-size: 3rem;
-                    text-decoration: none;
-                    -webkit-text-stroke: 0.02em white;
-                    color: transparent;
-                    cursor: pointer;
-                    background-clip: text;
-                    -webkit-text-fill-color: transparent;
-                    background-image: linear-gradient(
-                      to right,
-                      white,
-                      white 50%,
-                      transparent 50%
-                    );
-                    background-size: 200% 100%;
-                    background-position: 100%;
-                    transition: all 0.5s cubic-bezier(0, 0, 0.23, 1);
-
-                    &::after {
-                        -webkit-text-stroke: 0px;
-                        -webkit-text-fill-color: transparent;
-                        transform: translate(-40px, 8px);
-                        letter-spacing: 2px;
-                    }
-                }
-
-                a:hover {
-                    color: white;
-                    background-position: 0%;
-                  }
-            }
-
-            .tryItBtn {
-                margin: 6rem auto 1rem auto;
-                font-family: $font;
-            }
-        
-        }   
-    
-    }
-
+  }
 }
-
-
-
-
-
-
-

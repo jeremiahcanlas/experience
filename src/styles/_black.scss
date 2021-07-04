@@ -1,82 +1,78 @@
-
 .black {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #272d2d;
+  align-content: center;
+  justify-content: center;
+
+  @include md {
     min-height: 100vh;
-    width: 100%;
+  }
+
+  .black-content {
     display: flex;
     flex-direction: column;
-    background-color: #272D2D;
-    align-content: center;
-    justify-content: center;
+    padding: 0 1rem;
 
-    @include md {
-        min-height: 100vh;
-    }
+    // h1 {
+    //     font-family: $font;
+    //     margin-top: 5rem;
+    //     color: white;
+    //     letter-spacing: 7px;
+    //     font-size: 2rem;
 
+    //     @include md {
+    //         font-size: 3rem;
+    //         margin-bottom: 3rem;
+    //         margin-left: 5rem;
+    //     }
+    // }
 
-    .black-content {
-        display: flex;
-        flex-direction: column;
-        padding: 0 1rem;
+    .perks {
+      display: flex;
+      flex-direction: column;
 
-        // h1 {
-        //     font-family: $font;
-        //     margin-top: 5rem;
-        //     color: white;
-        //     letter-spacing: 7px;
-        //     font-size: 2rem;
+      @include md {
+        flex-direction: row;
+      }
 
-        //     @include md {
-        //         font-size: 3rem;
-        //         margin-bottom: 3rem;
-        //         margin-left: 5rem;
-        //     }
-        // }
+      .perk {
+        padding: 2rem 0;
 
-        .perks {
-            display: flex;
-            flex-direction: column;
-
-            @include md {
-                flex-direction: row;
-            }
-            
-            .perk {
-                padding: 2rem 0;
-
-                @include md {
-                    padding: 0 5rem;
-
-                }
-
-                .border {
-                    border-bottom: 0.15rem solid white;
-                    width:5vw;
-                    padding: 0 5rem;
-                }
-
-                h3{
-                    font-size: 1rem;
-                    letter-spacing: 5.1px;
-                    font-family: $font;
-
-                    @include md {
-                    font-size: 1.8rem;
-                    }
-                }
-
-                p{
-                    color: white;
-                    font-weight: 500;
-                    letter-spacing: 3.5px;
-                    font-size: .8rem;
-                    font-family: $font;
-
-                    @include md {
-                        font-size: 1.2rem;
-                    }
-                }
-            }
+        @include md {
+          padding: 0 5rem;
         }
-    }
 
+        .border {
+          border-bottom: 0.15rem solid white;
+          width: 5vw;
+          padding: 0 5rem;
+        }
+
+        h3 {
+          font-size: 1rem;
+          letter-spacing: 5.1px;
+          font-family: $font;
+
+          @include md {
+            font-size: 1.8rem;
+          }
+        }
+
+        p {
+          color: white;
+          font-weight: 500;
+          letter-spacing: 3.5px;
+          font-size: 0.8rem;
+          font-family: $font;
+
+          @include md {
+            font-size: 1.2rem;
+          }
+        }
+      }
+    }
+  }
 }

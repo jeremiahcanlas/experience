@@ -1,89 +1,83 @@
-
 .sound-container {
-    height: 100vh;
-    width: 100%;
-    background-color: #2F6690;
-    display: flex;
-    flex-direction: column-reverse;
-    align-items: center;
-    justify-content: center;
+  height: 100vh;
+  width: 100%;
+  background-color: #2f6690;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  justify-content: center;
 
+  @include md {
+    flex-direction: row;
+  }
+
+  .superior {
+    margin-top: 3rem;
+    padding: 0 1rem;
+    text-align: left;
 
     @include md {
-       
-        flex-direction: row;
+      margin: 0;
+      padding: none;
     }
 
-    .superior{
-        margin-top: 3rem;
-        padding: 0 1rem;
-        text-align: left;
+    h1 {
+      font-size: 2rem;
+      color: white;
+      font-family: $bold;
+      letter-spacing: 7px;
+      margin-bottom: 0;
+      cursor: default;
 
-        @include md {
-            margin: 0;
-            padding:none;
-        }
+      -webkit-text-stroke: 0.03em black;
+      color: transparent;
+      background-clip: text;
 
-        h1{
-            font-size: 2rem;
-            color: white;
-            font-family: $bold;
-            letter-spacing: 7px;
-            margin-bottom: 0;
-            cursor:default;
-
-            -webkit-text-stroke: 0.03em black;
-            color: transparent;
-            background-clip: text;
-
-            @include md {
-                font-size: 3rem;
-            };
-        }
-
-        p{
-            font-size: 1rem;
-            font-family: $font;
-            letter-spacing: 5.1px;
-            margin-top: 1rem;
-            margin-bottom: 2rem;
-            max-width: 80vw;
-            cursor:default;
-
-            @include md{
-                font-size: 1.2rem;
-                max-width: unset;
-            }
-
-        }
-
-        // a {
-        //     left: 30%;
-        //     font-family: $font;
-
-        //     @include md {
-        //         left:6%;
-        //     }
-        // }
-
+      @include md {
+        font-size: 3rem;
+      }
     }
 
-    .speakers{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
+    p {
+      font-size: 1rem;
+      font-family: $font;
+      letter-spacing: 5.1px;
+      margin-top: 1rem;
+      margin-bottom: 2rem;
+      max-width: 80vw;
+      cursor: default;
 
-        @include md {
-            width:30%;
-        }
-        
-
-        img{
-            width: 100px;
-
-            @include md {
-                width:200px;
-            }
-        }
+      @include md {
+        font-size: 1.2rem;
+        max-width: unset;
+      }
     }
+
+    // a {
+    //     left: 30%;
+    //     font-family: $font;
+
+    //     @include md {
+    //         left:6%;
+    //     }
+    // }
+  }
+
+  .speakers {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+    @include md {
+      width: 30%;
+    }
+
+    img {
+      width: 100px;
+
+      @include md {
+        width: 200px;
+      }
+    }
+  }
 }

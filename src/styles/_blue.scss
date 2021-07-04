@@ -1,100 +1,87 @@
-
 .blue {
-    height: 100vh;
-    width: 100%;
-    background-color: #475B63;
+  height: 100vh;
+  width: 100%;
+  background-color: #475b63;
+  display: flex;
+  flex-direction: row;
+
+  img {
+    height: 10rem;
+    width: 10rem;
+    margin: auto 5rem;
+    display: none;
+
+    @include md {
+      display: block;
+    }
+  }
+
+  .review-container {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    justify-content: center;
+    // min-width:35rem;
 
+    h1 {
+      font-family: $bold;
+      letter-spacing: 7px;
+      margin-left: 1.2rem;
+      font-size: 1.5rem;
+      cursor: default;
 
-
-    
-
-
-
-    img{
-        height: 10rem;
-        width: 10rem;
-        margin: auto 5rem;
-        display:none;
-
-        @include md {
-            display: block;
-        }
+      @include md {
+        font-size: 2.5rem;
+      }
     }
-   
 
-    .review-container {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        // min-width:35rem;
+    .reviews {
+      display: flex;
+      flex-direction: column;
 
-        h1 {
-            font-family: $bold;
-            letter-spacing: 7px;
-            margin-left: 1.2rem;
-            font-size: 1.5rem;
-            cursor: default;
+      @include md {
+        flex-direction: row;
+      }
 
-            @include md {
-                font-size: 2.5rem;
-            }
+      .review {
+        padding: 0 1.2rem;
+        margin: 1rem 0;
+        // max-width: 18rem;
+
+        h3 {
+          color: white;
+          font-size: 0.8rem;
+          font-family: $font;
+          letter-spacing: 3.5px;
+
+          @include md {
+            font-size: 1.3rem;
+          }
         }
 
-        .reviews{
-            display: flex;
-            flex-direction: column;
+        .stars {
+          i {
+            margin: 0 0.2rem;
 
-            @include md {
-                flex-direction: row;
+            &::before {
+              font-size: 0.8rem;
+
+              @include md {
+                font-size: 1rem;
+              }
             }
-
-            .review{
-                padding: 0 1.2rem;
-                margin: 1rem 0;
-                // max-width: 18rem;
-
-
-                h3 {
-                    color: white;
-                    font-size: .8rem;
-                    font-family: $font;
-                    letter-spacing: 3.5px;
-
-                    @include md {
-                        font-size: 1.3rem;
-                    }
-                }
-    
-                .stars{
-                    
-                    i{
-                        margin: 0 0.2rem;
-
-                        &::before {
-                            font-size: 0.8rem;
-                        
-                            @include md {
-                                font-size: 1rem;
-                            }
-                        }
-                    }
-                }
-    
-                p{
-                    font-size: .8rem;
-                    letter-spacing: 3px;
-                    font-family: $font;
-
-                    @include md {
-                        font-size: 1.2rem;
-                    }
-                }
-
-            }
-
-
+          }
         }
+
+        p {
+          font-size: 0.8rem;
+          letter-spacing: 3px;
+          font-family: $font;
+
+          @include md {
+            font-size: 1.2rem;
+          }
+        }
+      }
     }
+  }
 }
