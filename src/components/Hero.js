@@ -1,12 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { imageData } from '../utils/imageData';
 import { motion, AnimatePresence } from 'framer-motion';
-import Button from './buttons/Button';
+import Button from './button/Button';
 import { Link } from 'react-router-dom';
 import Fade from 'react-reveal/Fade';
-// import Pulse from 'react-reveal/Pulse';
-// import Slide from 'react-reveal/Slide';
-// import Bounce from 'react-reveal/Bounce';
 
 //Image Carousel from scratch
 const Hero = () => {

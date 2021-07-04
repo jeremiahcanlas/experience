@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
-import Black from './Black';
-import Button from './buttons/Button';
+import Perks from './Perks';
+import Button from './button/Button';
 import Fade from 'react-reveal/Fade';
 
 const Footer = ({ path }) => {
@@ -18,7 +18,7 @@ const Footer = ({ path }) => {
         }}
       >
         {path === '/price' ? (
-          <Black footer />
+          <Perks footer />
         ) : (
           <Fragment>
             <div className='content'>

@@ -2,9 +2,9 @@ import React, { useEffect } from 'react';
 import VisibilitySensor from 'react-visibility-sensor';
 import Hero from './Hero';
 import Sound from './Sound';
-import Yellow from './Yellow';
-import Blue from './Blue';
-import Black from './Black';
+import FrontRow from './FrontRow';
+import Reviews from './Reviews';
+import Perks from './Perks';
 import { useLocation } from 'react-router-dom';
 import '../styles/main.scss';
 
@@ -47,7 +47,7 @@ const Main = ({ getCompo, getPath, isMobile, component }) => {
         }}
         partialVisibility
       >
-        <Yellow isMobile={isMobile} component={component} />
+        <FrontRow isMobile={isMobile} component={component} />
       </VisibilitySensor>
 
       <VisibilitySensor
@@ -55,7 +55,7 @@ const Main = ({ getCompo, getPath, isMobile, component }) => {
           getCompo(isVisible && 'black', 'white');
         }}
       >
-        <Black />
+        <Perks />
       </VisibilitySensor>
 
       <VisibilitySensor
@@ -63,7 +63,7 @@ const Main = ({ getCompo, getPath, isMobile, component }) => {
           getCompo(isVisible && 'blue', '#1FE1E9');
         }}
       >
-        <Blue isMobile={isMobile} />
+        <Reviews isMobile={isMobile} />
       </VisibilitySensor>
     </div>
   );

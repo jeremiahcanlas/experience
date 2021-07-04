@@ -7,7 +7,7 @@
   align-items: center;
   justify-content: center;
 
-  @include md {
+  @include lg {
     flex-direction: row;
   }
 

@@ -1,11 +1,8 @@
 import React from 'react';
 import Fade from 'react-reveal/Fade';
-// import Pulse from 'react-reveal/Pulse';
-// import Slide from 'react-reveal/Slide';
-// import Bounce from 'react-reveal/Bounce';
 
-const Black = ({ footer }) => {
-  const perks = [
+const Perks = ({ footer }) => {
+  const perksData = [
     {
       title: 'Subscribe Anytime',
       color: '#17BEBB',
@@ -32,7 +29,7 @@ const Black = ({ footer }) => {
     >
       <div className='black-content'>
         <div className='perks'>
-          {perks.map((perk, index) => (
+          {perksData.map((perk, index) => (
             <Fade
               bottom
               delay={(index + 1) * 90}
@@ -55,4 +52,4 @@ const Black = ({ footer }) => {
   );
 };
 
-export default Black;
+export default Perks;

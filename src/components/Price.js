@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useLocation, Link } from 'react-router-dom';
-import Button from '../components/buttons/Button';
+import Button from './button/Button';
 import { plans } from '../utils/plansData';
 import Fade from 'react-reveal/Fade';
 

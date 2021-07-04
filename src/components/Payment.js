@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import Button from './buttons/Button';
+import Button from './button/Button';
 
 const Payment = ({ tier, getTier, getPath, getCompo }) => {
   const { pathname } = useLocation();
@@ -144,7 +144,7 @@ const Payment = ({ tier, getTier, getPath, getCompo }) => {
                 flexDirection: 'column',
               }}
             >
-              <p>3. Credit Card Information</p>
+              <p>3. Credit Information</p>
               <span
                 style={{
                   display: 'inline-block',

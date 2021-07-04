@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react';
 import video from '../utils/videos/rally.mp4';
-import Button from './buttons/Button';
+import Button from './button/Button';
 import Fade from 'react-reveal/Fade';
 // import Pulse from 'react-reveal/Pulse';
 // import Slide from 'react-reveal/Slide';
 // import Bounce from 'react-reveal/Bounce';
 
-const Yellow = ({ component: { compo } }) => {
+const FrontRow = ({ component: { compo } }) => {
   useEffect(() => {
     const vid = document.getElementById('video');
 
@@ -40,4 +40,4 @@ const Yellow = ({ component: { compo } }) => {
   );
 };
 
-export default Yellow;
+export default FrontRow;
