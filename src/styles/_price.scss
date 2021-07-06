@@ -8,6 +8,7 @@
   height: 100%;
   width: 100%;
   padding: 5rem 0;
+  z-index: 9999;
 
   @include lg {
     height: 100vh;
@@ -59,19 +60,24 @@
       min-width: 18em;
       min-height: 25em;
       padding: 5vw;
-      margin: 1rem auto;
+      margin: 2.5rem auto;
 
       @include lg {
         margin: 0 1.5rem;
+        padding: 2.5vw;
       }
 
       h1 {
         &:first-of-type {
           margin-bottom: 0.5rem;
-          font-size: 2rem;
+          font-size: 3rem;
           letter-spacing: 4px;
           font-family: $bold;
-          margin-top: 2em;
+          margin-top: 1em;
+
+          @include lg {
+            font-size: 2rem;
+          }
         }
 
         &:last-of-type {
@@ -135,27 +141,5 @@
       //     }
       // }
     }
-  }
-
-  .right-arrow {
-    position: absolute;
-    top: 65%;
-    right: 8%;
-    font-size: 2rem;
-    color: white;
-    z-index: 10;
-    cursor: pointer;
-    user-select: none;
-  }
-
-  .left-arrow {
-    position: absolute;
-    top: 65%;
-    left: 8%;
-    font-size: 2rem;
-    color: white;
-    z-index: 10;
-    cursor: pointer;
-    user-select: none;
   }
 }
