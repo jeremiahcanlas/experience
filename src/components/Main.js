@@ -43,8 +43,9 @@ const Main = ({ getCompo, getPath, isMobile, component }) => {
 
       <VisibilitySensor
         onChange={(isVisible) => {
-          getCompo(isVisible && 'yellow', '#FFB33F');
+          getCompo(isVisible && 'frontRow', '#FFB33F');
         }}
+        minTopValue={10}
         partialVisibility
       >
         <FrontRow isMobile={isMobile} component={component} />
@@ -60,7 +61,7 @@ const Main = ({ getCompo, getPath, isMobile, component }) => {
 
       <VisibilitySensor
         onChange={(isVisible) => {
-          getCompo(isVisible && 'blue', '#1FE1E9');
+          getCompo(isVisible && 'review', '#1FE1E9');
         }}
       >
         <Reviews isMobile={isMobile} />

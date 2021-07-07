@@ -6,6 +6,7 @@ import Fade from 'react-reveal/Fade';
 
 const Button = ({ name, style, duration, delay, bottom, left, right, top }) => (
   <Fade
+    ssrReveal
     bottom={bottom}
     left={left}
     right={right}

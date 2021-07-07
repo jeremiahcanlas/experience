@@ -12,13 +12,15 @@ const FrontRow = ({ component: { compo } }) => {
 
     vid.currentTime = 0;
 
-    compo === 'yellow' ? vid.play() : vid.pause();
+    compo === 'frontRow' ? vid.play() : vid.pause();
   }, [compo]);
 
   return (
-    <div className='yellow'>
+    <div className='frontRow'>
       <video
-        style={compo === 'yellow' ? { display: 'block' } : { display: 'none' }}
+        // style={
+        //   compo === 'frontRow' ? { display: 'visible' } : { display: 'hidden' }
+        // }
         muted
         loop
         playsInline
