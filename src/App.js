@@ -5,7 +5,6 @@ import Footer from './components/Footer';
 import Main from './components/Main';
 import Price from './components/Price';
 import Payment from './components/Payment';
-import Perks from './components/Perks';
 
 import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 import ScrollToTop from './components/ScrollToTop';
@@ -73,7 +72,6 @@ function App() {
               />
             )}
           />
-          <Route path='/perks' render={() => <Perks />} />
           <Route
             path='/checkout'
             render={() => (

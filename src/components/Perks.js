@@ -23,8 +23,7 @@ const Perks = ({ footer }) => {
 
   return (
     <div
-      id='allPerks'
-      className='black'
+      className='perks-container'
       style={{ scrollSnapAlign: footer ? 'none' : 'start' }}
     >
       <div className='black-content'>

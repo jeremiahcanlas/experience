@@ -1,25 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimateSharedLayout } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { Link as Scroll } from 'react-scroll';
 
 //this relies heavy on framer motion.
 
 const Nav = ({ component: { compo, color }, path }) => {
-  const navItems = [
-    {
-      item: 'home',
-      path: '/',
-    },
-    {
-      item: 'Perks',
-      path: '/perks',
-    },
-    {
-      item: 'Pricing',
-      path: '/price',
-    },
-  ];
-
   const [expand, toggleExpand] = useState(false);
 
   useEffect(() => {
@@ -57,7 +43,7 @@ const Nav = ({ component: { compo, color }, path }) => {
     },
   };
 
-  //checkout page exclusive =)
+  //checkout page exclusive =) turns nav brand to black
   const navStyle = {
     color: expand ? 'white' : compo === 'checkout' && 'black',
     opacity: 0.8,
@@ -122,19 +108,29 @@ const Nav = ({ component: { compo, color }, path }) => {
               initial='hidden'
               animate={expand ? 'visible' : 'hidden'}
             >
-              {navItems.map((item, index) => (
-                <motion.li className='nav-item' variants={navItem} key={index}>
-                  <Link
-                    to={item.path}
-                    onClick={(e) => toggleExpand(false)}
-                    replace
-                  >
-                    <motion.span key={index}>
-                      {item.item.toUpperCase()}
-                    </motion.span>
-                  </Link>
-                </motion.li>
-              ))}
+              <motion.li className='nav-item' variants={navItem}>
+                <Link to='/' onClick={(e) => toggleExpand(false)} replace>
+                  <motion.span>HOME</motion.span>
+                </Link>
+              </motion.li>
+              <motion.li
+                className='nav-item'
+                style={{ display: compo === 'checkout' ? 'none' : 'block' }}
+                variants={navItem}
+              >
+                <Scroll
+                  to='perks-container'
+                  onClick={(e) => toggleExpand(false)}
+                  replace
+                >
+                  <motion.span>PERKS</motion.span>
+                </Scroll>
+              </motion.li>
+              <motion.li className='nav-item' variants={navItem}>
+                <Link to='/price' onClick={(e) => toggleExpand(false)} replace>
+                  <motion.span>PACKAGES</motion.span>
+                </Link>
+              </motion.li>
             </motion.ul>
           </AnimateSharedLayout>
         </motion.div>
