@@ -1,9 +1,9 @@
 .price {
-  background-color: #191919;
+  background-color: $black;
   color: white;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  // justify-content: center;
   // align-content: center;
   height: 100%;
   width: 100%;
@@ -29,6 +29,7 @@
     h1 {
       letter-spacing: 7.4px;
       font-family: $bold;
+      margin-top: 6rem;
     }
 
     p {

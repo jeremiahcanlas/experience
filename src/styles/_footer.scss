@@ -9,7 +9,7 @@
     display: flex;
     // overflow: hidden;
     flex-direction: column; //dynamically set
-    background-color: #191919;
+    background-color: $black;
     align-content: center;
     justify-content: center;
     // min-width: 100vw;
@@ -43,6 +43,10 @@
 
         @include md {
           font-size: 2.5rem;
+        }
+
+        span {
+          -webkit-text-stroke: 0.03em $yellow;
         }
       }
 
@@ -148,7 +152,7 @@
   }
 
   .footer-purple {
-    background-color: #5e33d1;
+    background-color: $blue;
     // min-height: 50vh;
     // min-width:100vw ;
     display: flex;

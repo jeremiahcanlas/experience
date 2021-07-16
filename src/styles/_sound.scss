@@ -2,7 +2,7 @@
   position: relative;
   height: 100vh;
   width: 100%;
-  background-color: #2f6690;
+  background-color: $blue;
   display: flex;
   flex-direction: column-reverse;
   align-items: center;
@@ -24,13 +24,13 @@
 
     h1 {
       font-size: 2rem;
-      color: white;
+      // color: white;
       font-family: $bold;
       letter-spacing: 7px;
       margin-bottom: 0;
       cursor: default;
 
-      -webkit-text-stroke: 0.03em black;
+      -webkit-text-stroke: 0.05em $yellow;
       color: transparent;
       background-clip: text;
 
@@ -47,6 +47,7 @@
       margin-bottom: 2rem;
       max-width: 80vw;
       cursor: default;
+      color: white;
 
       @include md {
         font-size: 1.2rem;

@@ -23,14 +23,14 @@
 .button:hover {
   background-position: 0%;
   opacity: 1;
-  border: 1px solid #b85;
+  border: 1px solid $red;
 
   p {
     // background: -webkit-linear-gradient(right,  rgba(255,0,0,1) 0%,rgba(255,255,0,1) 19%,rgba(0,255,0,1) 38%,rgba(0,255,255,1) 51%,rgba(0,0,255,1) 67%,rgba(255,0,255,1) 83%,rgba(255,0,0,1) 99%); /* Chrome10+,Safari5.1+ */
     // -webkit-background-clip: text;
     // background-clip: text;
     // -webkit-text-fill-color: transparent;
-    color: #b85;
+    color: $red;
     cursor: pointer;
   }
 }

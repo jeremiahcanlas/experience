@@ -1,7 +1,7 @@
 .blue {
   height: 100vh;
   width: 100%;
-  background-color: #475b63;
+  background-color: $yellow;
   display: flex;
   flex-direction: row;
 
@@ -29,6 +29,8 @@
       font-size: 1.5rem;
       cursor: default;
 
+      -webkit-text-stroke: 0.05em $black;
+
       @include md {
         font-size: 2.5rem;
       }
@@ -48,7 +50,7 @@
         // max-width: 18rem;
 
         h3 {
-          color: white;
+          color: $red;
           font-size: 0.8rem;
           font-family: $font;
           letter-spacing: 3.5px;

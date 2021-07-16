@@ -1,25 +1,25 @@
-import React from 'react';
-import image from '../utils/img/rating.png';
-import Fade from 'react-reveal/Fade';
-import Bounce from 'react-reveal/Bounce';
+import React from "react";
+import image from "../utils/img/rating.png";
+import Fade from "react-reveal/Fade";
+import Bounce from "react-reveal/Bounce";
 
 const Reviews = ({ isMobile }) => {
   const reviews = [
     {
-      title: 'Subaru Fan',
+      title: "Subaru Fan",
       rate: 5,
-      review: 'This is a great subscription service!',
+      review: "This is a great subscription service!",
     },
     {
-      title: 'Ford',
+      title: "Ford",
       rate: 5,
-      review: 'Mind-blowing quality! Highly Recommend! ',
+      review: "Mind-blowing quality! Highly Recommend! ",
     },
     {
-      title: 'Hyundai',
+      title: "Hyundai",
       rate: 5,
       review:
-        'Outstanding customer service and live stream quality is phenomenal',
+        "Outstanding customer service and live stream quality is phenomenal",
     },
   ];
 
@@ -29,8 +29,8 @@ const Reviews = ({ isMobile }) => {
 
     for (let i = 0; i < rate; i++) {
       stars.push(
-        <Bounce delay={(i + 14) * 100} duration={400} key={i + 2}>
-          <i className='fa fa-star'></i>
+        <Bounce delay={(i + 13) * 100} duration={300} key={i + 2}>
+          <i className="fa fa-star"></i>
         </Bounce>
       );
     }
@@ -39,13 +39,13 @@ const Reviews = ({ isMobile }) => {
   };
 
   return (
-    <div className='blue'>
-      <img src={image} alt='thumbs up' />
-      <div className='review-container'>
+    <div className="blue">
+      <img src={image} alt="thumbs up" />
+      <div className="review-container">
         <Fade duration={800} delay={500}>
-          <h1 className='fancy'>REVIEWS</h1>
+          <h1 className="fancy">REVIEWS</h1>
         </Fade>
-        <div className='reviews'>
+        <div className="reviews">
           {reviews.map((i, index) => (
             <Fade
               left={isMobile ? true : false}
@@ -54,8 +54,8 @@ const Reviews = ({ isMobile }) => {
               duration={1000}
               key={index + 2}
             >
-              <div className='review'>
-                <div className='stars'>{rating(i.rate)}</div>
+              <div className="review">
+                <div className="stars">{rating(i.rate)}</div>
                 <h3>{i.title.toUpperCase()}</h3>
                 <p>"{i.review}"</p>
               </div>

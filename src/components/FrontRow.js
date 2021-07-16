@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import video from "../utils/videos/rally.mp4";
 import Button from "./button/Button";
+import { Link } from "react-router-dom";
 import Fade from "react-reveal/Fade";
 // import Pulse from 'react-reveal/Pulse';
 // import Slide from 'react-reveal/Slide';
@@ -36,7 +37,9 @@ const FrontRow = ({ component: { compo } }) => {
         <Fade duration={2000} delay={500}>
           <p>Experience rally racing up close and personal.</p>
         </Fade>
-        <Button name={"try it now"} duration={1000} delay={1000} />
+        <Link to="/price" replace>
+          <Button name={"try it now"} duration={1000} delay={1000} />
+        </Link>
       </div>
     </div>
   );

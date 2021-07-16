@@ -33,7 +33,7 @@
       font-size: 2rem;
       letter-spacing: 5px;
       padding: 0 1rem;
-      text-shadow: 0px 0px 4px white;
+      // text-shadow: 0px 0px 4px white;
 
       color: #222;
       cursor: default;
@@ -59,29 +59,29 @@
     }
   }
 
-  .scroll {
-    position: absolute;
-    z-index: 1;
-    width: 100%;
-    bottom: 12vh;
-    font-family: $font;
-    text-align: center;
-    color: whitesmoke;
-    margin-bottom: 1rem;
-    opacity: 0.7;
-    text-shadow: 0px 0px 3px white;
+  // .scroll {
+  //   position: absolute;
+  //   z-index: 1;
+  //   width: 100%;
+  //   bottom: 12vh;
+  //   font-family: $font;
+  //   text-align: center;
+  //   color: whitesmoke;
+  //   margin-bottom: 1rem;
+  //   opacity: 0.7;
+  //   // text-shadow: 0px 0px 3px white;
 
-    @include md {
-      bottom: 0%;
-    }
+  //   @include md {
+  //     bottom: 0%;
+  //   }
 
-    i {
-      font-size: 2rem;
-      &::after {
-        font-size: 2rem;
-      }
-    }
-  }
+  //   i {
+  //     font-size: 2rem;
+  //     &::after {
+  //       font-size: 2rem;
+  //     }
+  //   }
+  // }
 
   .tryItBtn {
     margin-top: 3rem;

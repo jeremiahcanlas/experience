@@ -1,16 +1,18 @@
-@import './typography';
-@import './helper';
-@import './viewport';
-@import './hero';
-@import './sound';
-@import './frontrow';
-@import './perks';
-@import './reviews';
-@import './footer';
-@import './button';
-@import './nav';
-@import './payment';
-@import './price';
+@import "./typography";
+@import "./colors";
+@import "./helper";
+@import "./viewport";
+
+@import "./hero";
+@import "./sound";
+@import "./frontrow";
+@import "./perks";
+@import "./reviews";
+@import "./footer";
+@import "./button";
+@import "./nav";
+@import "./payment";
+@import "./price";
 
 html {
   overflow-x: hidden;
