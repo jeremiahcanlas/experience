@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import { motion, AnimateSharedLayout } from 'framer-motion';
-import { Link } from 'react-router-dom';
-import { Link as Scroll } from 'react-scroll';
+import React, { useState, useEffect } from "react";
+import { motion, AnimateSharedLayout } from "framer-motion";
+import { Link } from "react-router-dom";
+import { Link as Scroll } from "react-scroll";
 
 //this relies heavy on framer motion.
 
@@ -14,15 +14,15 @@ const Nav = ({ component: { compo, color }, path }) => {
 
   const list = {
     visible: {
-      display: 'block',
+      display: "block",
       opacity: 1,
       transition: {
-        when: 'beforeChildren',
+        when: "beforeChildren",
         staggerChildren: 0.3,
       },
     },
     hidden: {
-      display: 'none',
+      display: "none",
     },
   };
 
@@ -45,20 +45,20 @@ const Nav = ({ component: { compo, color }, path }) => {
 
   //checkout page exclusive =) turns nav brand to black
   const navStyle = {
-    color: expand ? 'white' : compo === 'checkout' && 'black',
+    color: expand ? "white" : compo === "checkout" && "black",
     opacity: 0.8,
   };
 
   return (
-    <div className='nav'>
-      <div className='nav-brand'>
-        <Link to='/' replace>
+    <div className="nav">
+      <div className="nav-brand">
+        <Link to="/">
           <motion.span
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{
               duration: 1,
-              type: 'tween',
+              type: "tween",
             }}
             onClick={(e) => toggleExpand(false)}
             style={navStyle}
@@ -69,30 +69,30 @@ const Nav = ({ component: { compo, color }, path }) => {
       </div>
 
       <motion.div
-        className='hamburger'
+        className="hamburger"
         onClick={(e) => toggleExpand(!expand)}
         transition={{
           duration: 0.2,
-          type: 'tween',
+          type: "tween",
         }}
         whileHover={{ scale: 1.1 }}
         style={navStyle}
       >
         <i
-          className={expand ? 'fa fa-times' : 'fa fa-bars'}
-          aria-hidden='true'
+          className={expand ? "fa fa-times" : "fa fa-bars"}
+          aria-hidden="true"
         ></i>
       </motion.div>
 
       <AnimateSharedLayout>
         <motion.div
-          className='nav-cover'
+          className="nav-cover"
           initial={{ width: 0, height: 0 }}
           animate={
             expand
               ? {
-                  width: '100vw',
-                  height: '100vh',
+                  width: "100vw",
+                  height: "100vh",
                 }
               : { width: 0, height: 0 }
           }
@@ -105,29 +105,28 @@ const Nav = ({ component: { compo, color }, path }) => {
             <motion.ul
               className={`dropdown`}
               variants={list}
-              initial='hidden'
-              animate={expand ? 'visible' : 'hidden'}
+              initial="hidden"
+              animate={expand ? "visible" : "hidden"}
             >
-              <motion.li className='nav-item' variants={navItem}>
-                <Link to='/' onClick={(e) => toggleExpand(false)} replace>
+              <motion.li className="nav-item" variants={navItem}>
+                <Link to="/" onClick={(e) => toggleExpand(false)}>
                   <motion.span>HOME</motion.span>
                 </Link>
               </motion.li>
               <motion.li
-                className='nav-item'
-                style={{ display: compo === 'checkout' ? 'none' : 'block' }}
+                className="nav-item"
+                style={{ display: compo === "checkout" ? "none" : "block" }}
                 variants={navItem}
               >
                 <Scroll
-                  to='perks-container'
+                  to="perks-container"
                   onClick={(e) => toggleExpand(false)}
-                  replace
                 >
                   <motion.span>PERKS</motion.span>
                 </Scroll>
               </motion.li>
-              <motion.li className='nav-item' variants={navItem}>
-                <Link to='/price' onClick={(e) => toggleExpand(false)} replace>
+              <motion.li className="nav-item" variants={navItem}>
+                <Link to="/price" onClick={(e) => toggleExpand(false)}>
                   <motion.span>PACKAGES</motion.span>
                 </Link>
               </motion.li>

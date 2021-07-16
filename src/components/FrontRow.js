@@ -37,7 +37,7 @@ const FrontRow = ({ component: { compo } }) => {
         <Fade duration={2000} delay={500}>
           <p>Experience rally racing up close and personal.</p>
         </Fade>
-        <Link to="/price" replace>
+        <Link to="/price">
           <Button name={"try it now"} duration={1000} delay={1000} />
         </Link>
       </div>
