@@ -29,7 +29,10 @@
     h1 {
       letter-spacing: 7.4px;
       font-family: $bold;
-      margin-top: 6rem;
+
+      @include sm {
+        margin-top: 6rem;
+      }
     }
 
     p {
@@ -60,7 +63,7 @@
       border-radius: 0.5rem;
       min-width: 18em;
       min-height: 25em;
-      padding: 5vw;
+      padding: 1rem;
       margin: 2.5rem auto;
 
       @include lg {
