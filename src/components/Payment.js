@@ -7,6 +7,8 @@ import Fade from "react-reveal/Fade";
 const Payment = ({ tier, getTier, getPath, getCompo }) => {
   const { pathname } = useLocation();
   const [loading, setLoading] = useState(true);
+  const [valid, validate] = useState("initial");
+  const [name, setName] = useState("");
 
   useEffect(() => {
     getPath(pathname);
@@ -16,7 +18,7 @@ const Payment = ({ tier, getTier, getPath, getCompo }) => {
       setLoading(false);
     }, 3000);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [loading]);
 
   const radio = [
     {
@@ -26,17 +28,27 @@ const Payment = ({ tier, getTier, getPath, getCompo }) => {
     {
       name: "advanced",
       color: "#097054",
+      default: true,
     },
     {
       name: "pro",
       color: "#cc0000",
     },
   ];
+  const handleChange = (e) => {
+    setName(e.target.value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    name ? validate("validated") : validate(false);
+    name && setLoading(true);
+  };
 
   const PaymentForm = () => (
     <div className="payment-form">
       <h1 className="fancy">PAYMENT</h1>
-      <form action="submit">
+      <form action="submit" noValidate onSubmit={(e) => handleSubmit(e)}>
         <div className="tiers">
           <p>1. Select your plan</p>
           <div className="labels">
@@ -87,7 +99,23 @@ const Payment = ({ tier, getTier, getPath, getCompo }) => {
               <label htmlFor="name" style={{ display: "block" }}>
                 FULL NAME
               </label>
-              <input type="text" name="name" id="name" />
+              <input
+                type="text"
+                name="name"
+                id="name"
+                required
+                className={!valid && "invalid"}
+                onChange={(e) => handleChange(e)}
+              />
+              <p
+                style={{
+                  display: valid ? "none" : "block",
+                  margin: 0,
+                  fontSize: "0.5em",
+                }}
+              >
+                PLEASE ENTER ANY NAME
+              </p>
             </span>
 
             <span
@@ -222,7 +250,7 @@ const Payment = ({ tier, getTier, getPath, getCompo }) => {
           By continuing, I acknowledge that I’ve read and agree to the{" "}
           <span>Terms of Service</span> & <span>Privacy Policy</span>.
         </p>
-        <div className="payment-btn">
+        <button className="payment-btn" type="submit">
           <Button
             name="Download"
             style={{
@@ -230,25 +258,42 @@ const Payment = ({ tier, getTier, getPath, getCompo }) => {
               border: "1px solid black",
             }}
           />
-        </div>
+        </button>
       </form>
     </div>
   );
 
-  const loader = () => (
+  const loader = (text) => (
     <Fade>
       <div className="loader">
         <div className="loader-content">
           <img src={Loader} alt="nyancat" />
           <Fade cascade bottom>
-            <h2>PROCESSING YOUR ORDER...</h2>
+            <h2>{text}</h2>
           </Fade>
         </div>
       </div>
     </Fade>
   );
 
-  return <div className="payment">{loading ? loader() : PaymentForm()}</div>;
+  const confirmation = () => (
+    <div className="confirmation-page">
+      <h1>THANK YOU, {name.toUpperCase()} !</h1>
+      <p>You have purchased: {tier.toUpperCase()} MEMBERSHIP</p>
+    </div>
+  );
+
+  return valid === "validated" ? (
+    <div className="payment">
+      {loading ? loader("Processing your order...") : confirmation()}
+    </div>
+  ) : (
+    <div className="payment">
+      {loading
+        ? loader(`ADDING ${tier.toUpperCase()} MEMBERSHIP...`)
+        : PaymentForm()}
+    </div>
+  );
 };
 
 export default Payment;

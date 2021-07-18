@@ -1,15 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
-import Nav from './components/Nav';
-import Footer from './components/Footer';
-import Main from './components/Main';
-import Price from './components/Price';
-import Payment from './components/Payment';
+import Nav from "./components/Nav";
+import Footer from "./components/Footer";
+import Main from "./components/Main";
+import Price from "./components/Price";
+import Payment from "./components/Payment";
 
-import { HashRouter as Router, Route, Switch } from 'react-router-dom';
-import ScrollToTop from './components/ScrollToTop';
+import { HashRouter as Router, Route, Switch } from "react-router-dom";
+import ScrollToTop from "./components/ScrollToTop";
 
-import useWindowDimensions from './utils/viewport';
+import useWindowDimensions from "./utils/viewport";
 
 function App() {
   const { width } = useWindowDimensions();
@@ -18,11 +18,11 @@ function App() {
   const isMobile = width < 730;
 
   //sets which components are on viewport
-  const [component, setComponent] = useState('');
+  const [component, setComponent] = useState("");
   //sets which path is the user currently on
-  const [path, setPath] = useState('');
+  const [path, setPath] = useState("/");
   //sets which tier was selected
-  const [tier, setTier] = useState('');
+  const [tier, setTier] = useState("advanced");
 
   //sets path function
   const getPath = (path) => {
@@ -44,13 +44,13 @@ function App() {
   };
 
   return (
-    <div className='App app-main'>
+    <div className="App app-main">
       <Router basename={process.env.PUBLIC_URL}>
         <Nav component={component} path={path} />
         <ScrollToTop />
         <Switch>
           <Route
-            path='/'
+            path="/"
             exact
             render={() => (
               <Main
@@ -62,7 +62,7 @@ function App() {
             )}
           />
           <Route
-            path='/price'
+            path="/price"
             render={() => (
               <Price
                 getPath={getPath}
@@ -73,7 +73,7 @@ function App() {
             )}
           />
           <Route
-            path='/checkout'
+            path="/checkout"
             render={() => (
               <Payment
                 tier={tier}
@@ -83,6 +83,8 @@ function App() {
               />
             )}
           />
+
+          <Route path="/*" render={() => <h1>WRONG WAY JOSE</h1>} />
         </Switch>
 
         <Footer path={path} getCompo={getCompo} />
