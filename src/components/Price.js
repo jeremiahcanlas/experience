@@ -56,7 +56,7 @@ const Price = ({ getPath, getTier, getCompo, isMobile }) => {
 
               <Link
                 to="/checkout"
-                onClick={(e) => getTier(`${plan.tier.toLocaleLowerCase()}`)}
+                onClick={(e) => getTier(plan.tier.toLowerCase())}
               >
                 <Button
                   name={"select"}

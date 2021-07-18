@@ -14,9 +14,12 @@ const Payment = ({ tier, getTier, getPath, getCompo }) => {
     getPath(pathname);
     getCompo("checkout", "white");
 
-    setTimeout(() => {
+    const timer = setTimeout(() => {
       setLoading(false);
     }, 3000);
+
+    return () => clearTimeout(timer);
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [loading]);
 
@@ -28,7 +31,6 @@ const Payment = ({ tier, getTier, getPath, getCompo }) => {
     {
       name: "advanced",
       color: "#097054",
-      default: true,
     },
     {
       name: "pro",
@@ -104,7 +106,7 @@ const Payment = ({ tier, getTier, getPath, getCompo }) => {
                 name="name"
                 id="name"
                 required
-                className={!valid && "invalid"}
+                className={!valid ? "invalid" : undefined}
                 onChange={(e) => handleChange(e)}
               />
               <p
@@ -252,7 +254,7 @@ const Payment = ({ tier, getTier, getPath, getCompo }) => {
         </p>
         <button className="payment-btn" type="submit">
           <Button
-            name="Download"
+            name="Checkout"
             style={{
               color: "black",
               border: "1px solid black",
@@ -278,8 +280,22 @@ const Payment = ({ tier, getTier, getPath, getCompo }) => {
 
   const confirmation = () => (
     <div className="confirmation-page">
-      <h1>THANK YOU, {name.toUpperCase()} !</h1>
-      <p>You have purchased: {tier.toUpperCase()} MEMBERSHIP</p>
+      <Fade bottom>
+        <h1>THANK YOU, {name.toUpperCase()} !</h1>
+        <p>Order Number: {Math.floor(Math.random() * 999999)}</p>
+        <p>Membership: {tier.toUpperCase()}</p>
+        <a
+          href="https://jeremiahcanlas.com"
+          rel="noreferrer"
+          target="_blank"
+          className="confirm-btn"
+        >
+          <Button
+            name="download"
+            style={{ color: "black", borderColor: "black" }}
+          />
+        </a>
+      </Fade>
     </div>
   );
 

@@ -95,7 +95,7 @@
 
       span {
         overflow: hidden;
-        height: 5rem;
+        height: 4rem;
 
         input {
           border: 1px solid black;
@@ -209,6 +209,11 @@
     flex-direction: column;
     justify-content: center;
     align-content: center;
+
+    .confirm-btn {
+      margin-top: 2em;
+      font-family: $font;
+    }
   }
 
   .payment-btn {

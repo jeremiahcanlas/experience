@@ -5,11 +5,13 @@ import Footer from "./components/Footer";
 import Main from "./components/Main";
 import Price from "./components/Price";
 import Payment from "./components/Payment";
+import Button from "./components/button/Button";
 
-import { HashRouter as Router, Route, Switch } from "react-router-dom";
+import { HashRouter as Router, Route, Switch, Link } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
 
 import useWindowDimensions from "./utils/viewport";
+import Fade from "react-reveal/Fade";
 
 function App() {
   const { width } = useWindowDimensions();
@@ -83,8 +85,19 @@ function App() {
               />
             )}
           />
-
-          <Route path="/*" render={() => <h1>WRONG WAY JOSE</h1>} />
+          <Route
+            path="/*"
+            render={() => (
+              <div className="redirect-page">
+                <Fade top>
+                  <h1>WRONG WAY, HOMIE ⛔️</h1>
+                </Fade>
+                <Link to="/" className="redirect-btn">
+                  <Button name="HOME" />
+                </Link>
+              </div>
+            )}
+          />
         </Switch>
 
         <Footer path={path} getCompo={getCompo} />
