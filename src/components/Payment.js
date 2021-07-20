@@ -7,12 +7,17 @@ import Fade from "react-reveal/Fade";
 const Payment = ({ tier, getTier, getPath, getCompo }) => {
   const { pathname } = useLocation();
   const [loading, setLoading] = useState(true);
-  const [valid, validate] = useState("initial");
+  const [validName, validateName] = useState(" ");
+  const [validEmail, validateEmail] = useState(" ");
+  const [valid, setValid] = useState("initial");
   const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [order, setOrder] = useState("");
 
   useEffect(() => {
     getPath(pathname);
     getCompo("checkout", "white");
+    setOrder(Math.floor(Math.random() * 999999));
 
     const timer = setTimeout(() => {
       setLoading(false);
@@ -37,14 +42,40 @@ const Payment = ({ tier, getTier, getPath, getCompo }) => {
       color: "#cc0000",
     },
   ];
-  const handleChange = (e) => {
-    setName(e.target.value);
+  const handleName = (e) => {
+    const name = e.target.value;
+
+    if (name) {
+      setName(name);
+      validateName("validated");
+    } else {
+      validateName("fail");
+    }
+  };
+
+  const handleEmail = (e) => {
+    const email = e.target.value;
+    const re = /^\w+(@\w+)(\.\w+)$/i;
+
+    if (email.match(re)) {
+      setEmail(email);
+      validateEmail("validated");
+    } else {
+      validateEmail("fail");
+    }
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    name ? validate("validated") : validate(false);
-    name && setLoading(true);
+
+    if (validName === "validated" && validEmail === "validated") {
+      setValid("validated");
+      setLoading(true);
+    } else {
+      validName !== "validated" && validateName("fail");
+      validEmail !== "validated" && validateEmail("fail");
+      setValid(false);
+    }
   };
 
   const PaymentForm = () => (
@@ -99,24 +130,50 @@ const Payment = ({ tier, getTier, getPath, getCompo }) => {
               }}
             >
               <label htmlFor="name" style={{ display: "block" }}>
-                FULL NAME
+                FULL NAME *
               </label>
               <input
                 type="text"
                 name="name"
                 id="name"
                 required
-                className={!valid ? "invalid" : undefined}
-                onChange={(e) => handleChange(e)}
+                className={validName === "fail" ? "invalid" : undefined}
+                onChange={(e) => handleName(e)}
               />
               <p
                 style={{
-                  display: valid ? "none" : "block",
+                  display: validName !== "fail" ? "none" : "block",
                   margin: 0,
                   fontSize: "0.5em",
                 }}
               >
-                PLEASE ENTER ANY NAME
+                PLEASE ENTER A VALID NAME
+              </p>
+            </span>
+            <span
+              style={{
+                display: "inline-block",
+              }}
+            >
+              <label htmlFor="email" style={{ display: "block" }}>
+                EMAIL *
+              </label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                className={validEmail === "fail" ? "invalid" : undefined}
+                onChange={(e) => handleEmail(e)}
+                required
+              />
+              <p
+                style={{
+                  display: validEmail !== "fail" ? "none" : "block",
+                  margin: 0,
+                  fontSize: "0.5em",
+                }}
+              >
+                PLEASE ENTER A VALID EMAIL
               </p>
             </span>
 
@@ -128,7 +185,13 @@ const Payment = ({ tier, getTier, getPath, getCompo }) => {
               <label htmlFor="address" style={{ display: "block" }}>
                 BILLING ADDRESS
               </label>
-              <input type="text" name="address" id="address" />
+              <input
+                type="text"
+                name="address"
+                id="address"
+                placeholder="Sample Only"
+                disabled
+              />
             </span>
 
             <div className="split">
@@ -140,7 +203,13 @@ const Payment = ({ tier, getTier, getPath, getCompo }) => {
                 <label htmlFor="city" style={{ display: "block" }}>
                   CITY
                 </label>
-                <input type="text" name="city" id="city" />
+                <input
+                  type="text"
+                  name="city"
+                  placeholder="Sample Only"
+                  id="city"
+                  disabled
+                />
               </span>
 
               <span
@@ -156,20 +225,10 @@ const Payment = ({ tier, getTier, getPath, getCompo }) => {
                   name="postal"
                   id="postal"
                   placeholder=" A1A 1A1"
+                  disabled
                 />
               </span>
             </div>
-
-            <span
-              style={{
-                display: "inline-block",
-              }}
-            >
-              <label htmlFor="country" style={{ display: "block" }}>
-                COUNTRY
-              </label>
-              <input type="text" name="country" id="country" />
-            </span>
           </div>
 
           <div
@@ -188,7 +247,13 @@ const Payment = ({ tier, getTier, getPath, getCompo }) => {
               <label htmlFor="card-name" style={{ display: "block" }}>
                 CARDHOLDER'S NAME
               </label>
-              <input type="text" name="card-name" id="card-name" />
+              <input
+                type="text"
+                name="card-name"
+                id="card-name"
+                placeholder="Sample Only"
+                disabled
+              />
             </span>
 
             <span
@@ -199,7 +264,13 @@ const Payment = ({ tier, getTier, getPath, getCompo }) => {
               <label htmlFor="card-number" style={{ display: "block" }}>
                 CARD NUMBER
               </label>
-              <input type="text" name="card-number" id="card-number" />
+              <input
+                type="text"
+                name="card-number"
+                placeholder="Sample Only"
+                id="card-number"
+                disabled
+              />
             </span>
 
             <div className="split">
@@ -216,6 +287,7 @@ const Payment = ({ tier, getTier, getPath, getCompo }) => {
                   name="expiry-month"
                   id="expiry-month"
                   placeholder=" MM/YY"
+                  disabled
                 />
               </span>
               <span
@@ -231,6 +303,7 @@ const Payment = ({ tier, getTier, getPath, getCompo }) => {
                   name="expiry-year"
                   id="expiry-year"
                   placeholder=" MM/YY"
+                  disabled
                 />
               </span>
             </div>
@@ -243,7 +316,13 @@ const Payment = ({ tier, getTier, getPath, getCompo }) => {
               <label htmlFor="cvv" style={{ display: "block" }}>
                 CVV
               </label>
-              <input type="text" name="cvv" id="cvv" />
+              <input
+                type="text"
+                name="cvv"
+                placeholder="Sample Only"
+                id="cvv"
+                disabled
+              />
             </span>
           </div>
         </div>
@@ -280,10 +359,34 @@ const Payment = ({ tier, getTier, getPath, getCompo }) => {
 
   const confirmation = () => (
     <div className="confirmation-page">
-      <Fade bottom>
-        <h1>THANK YOU, {name.toUpperCase()} !</h1>
-        <p>Order Number: {Math.floor(Math.random() * 999999)}</p>
-        <p>Membership: {tier.toUpperCase()}</p>
+      <Fade bottom duration={1000}>
+        <i className="fa fa-car"></i>
+        <h1>
+          Thank you,{" "}
+          <span>{name.split(" ").slice(0, 1).join(" ").toLowerCase()}</span> !
+        </h1>
+        <div>
+          <p>Thank you for subscribing.</p>
+          <p>
+            Please find your <b>order details</b> below:
+          </p>
+        </div>
+        <div className="order-details">
+          <p>
+            <b>Order Number: </b>
+            {order}
+          </p>
+          <p>
+            <b>Membership:</b> {tier.toUpperCase()}
+          </p>
+          <p>
+            <b>Start date:</b>{" "}
+            {new Date().toLocaleString("en-US", { dateStyle: "long" })}
+          </p>
+          <p>
+            We've emailed a copy of this invoice to <b>{email}</b>
+          </p>
+        </div>
         <a
           href="https://jeremiahcanlas.com"
           rel="noreferrer"
@@ -291,8 +394,11 @@ const Payment = ({ tier, getTier, getPath, getCompo }) => {
           className="confirm-btn"
         >
           <Button
-            name="download"
-            style={{ color: "black", borderColor: "black" }}
+            name="download app"
+            style={{
+              color: "black",
+              borderColor: "black",
+            }}
           />
         </a>
       </Fade>

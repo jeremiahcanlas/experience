@@ -1,7 +1,10 @@
 //breakpoints
 $screen-sm-min: 688px;
 $screen-md-min: 768px;
-$screen-lg-min: 992px;
+$screen-lg-min: 900px;
+
+//landscape
+$screen-mobile-landscape: 400px;
 
 // Small devices
 @mixin sm {
@@ -20,6 +23,13 @@ $screen-lg-min: 992px;
 // Large devices
 @mixin lg {
   @media (min-width: #{$screen-lg-min}) {
+    @content;
+  }
+}
+
+//mobile landscape
+@mixin ls {
+  @media (max-height: #{$screen-mobile-landscape}) {
     @content;
   }
 }

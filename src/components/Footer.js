@@ -2,6 +2,7 @@ import React, { Fragment } from "react";
 import Perks from "./Perks";
 import Button from "./button/Button";
 import Fade from "react-reveal/Fade";
+import { Link } from "react-router-dom";
 
 const Footer = ({ path }) => {
   const year = new Date();
@@ -32,7 +33,9 @@ const Footer = ({ path }) => {
               </Fade>
             </div>
             <div className="footer-btn">
-              <Button name={"try it now"} duration={1000} delay={1500} />
+              <Link to="/price">
+                <Button name={"try it now"} duration={1000} delay={1500} />
+              </Link>
             </div>
           </Fragment>
         )}

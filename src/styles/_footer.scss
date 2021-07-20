@@ -45,6 +45,10 @@
           font-size: 2.5rem;
         }
 
+        @include ls {
+          font-size: 1.8rem;
+        }
+
         span {
           -webkit-text-stroke: 0.03em $yellow;
         }
@@ -60,6 +64,10 @@
 
         @include md {
           font-size: 1.8rem;
+        }
+
+        @include ls {
+          font-size: 1.2em;
         }
       }
     }

@@ -50,7 +50,9 @@ const Price = ({ getPath, getTier, getCompo, isMobile }) => {
               <h2 style={{ color: plan.color }}>
                 {plan.duration.toUpperCase()}
               </h2>
-              <h1 style={{ color: plan.color }}>${plan.price}</h1>
+              <h1 style={{ color: plan.color }}>
+                $<span>{plan.price}</span> FREE
+              </h1>
 
               <p>{plan.summary}</p>
 

@@ -32,6 +32,10 @@
       -webkit-text-stroke: 0.05em $black;
 
       @include md {
+        font-size: 2em;
+      }
+
+      @include lg {
         font-size: 2.5rem;
       }
     }
@@ -49,13 +53,21 @@
         margin: 1rem 0;
         // max-width: 18rem;
 
+        @include md {
+          margin: 0.5em 0;
+        }
+
         h3 {
           color: $red;
           font-size: 0.8rem;
           font-family: $font;
           letter-spacing: 3.5px;
 
-          @include md {
+          @include ls {
+            font-size: 0.5em;
+          }
+
+          @include lg {
             font-size: 1.3rem;
           }
         }
@@ -79,7 +91,11 @@
           letter-spacing: 3px;
           font-family: $font;
 
-          @include md {
+          @include ls {
+            font-size: 0.7em;
+          }
+
+          @include lg {
             font-size: 1.2rem;
           }
         }

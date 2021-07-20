@@ -83,14 +83,23 @@
             font-size: 2rem;
           }
         }
-
+        // price
         &:last-of-type {
-          font-size: 2rem !important;
+          font-size: 1.5rem !important;
           margin: 1rem 0;
           font-family: $font;
 
           @include md {
-            font-size: 5rem !important;
+            font-size: 2rem !important;
+          }
+
+          span {
+            text-decoration: line-through;
+            font-size: 2rem;
+
+            @include md {
+              font-size: 4rem;
+            }
           }
         }
       }

@@ -44,6 +44,10 @@
       font-family: $bold;
 
       @include md {
+        font-size: 2em;
+      }
+
+      @include lg {
         font-size: 3rem;
       }
     }
@@ -57,8 +61,12 @@
       cursor: default;
 
       @include md {
-        font-size: 1.2rem;
+        font-size: 1em;
         padding: 0;
+      }
+
+      @include lg {
+        font-size: 1.2rem;
       }
     }
   }
